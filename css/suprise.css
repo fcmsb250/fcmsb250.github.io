@@ -1,4 +1,4 @@
-#sup{
+supe{
     position: fixed;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     z-index: 10;
 }
 
-.game {
+game{
     width: 700px;
     height: 600px;
     line-height: 600px;
