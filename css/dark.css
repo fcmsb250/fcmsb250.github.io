@@ -1,4 +1,4 @@
-.tdd{
+section{
     background-color:rgba(0, 0, 0, 0.5);
 }
 body{
@@ -11,13 +11,13 @@ button,input{
     color: rgb(255, 255, 255);
     border: 2px solid rgb(0, 0, 0);
 }
-.tdd:hover{
+section:hover{
     background-color: rgba(50, 50, 50, 0.3);
 }
 button:hover,input:hover{
     border: 2px solid rgb(100, 100, 100);
 }
-.tddd:hover{
+header:hover{
     border-bottom: 4px solid rgba(50, 50, 0, 0.8);
     background-color: rgba(0, 0, 0, 0.5);
 }
