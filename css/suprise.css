@@ -1,0 +1,24 @@
+#sup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.game {
+    width: 700px;
+    height: 600px;
+    line-height: 600px;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -350px;
+    background-color: rgba(0, 0, 0, 0);
+    /* border-radius: 5px; */
+    z-index: 11; 
+    /* text-align: center; */
+}
