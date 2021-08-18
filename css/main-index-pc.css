@@ -8,14 +8,17 @@ body{
     
 }
 header{
+    height: 110;
+    text-align: center;
+    display: table;
+    table-layout: fixed;
     border-bottom: 4px solid rgba(0, 0, 0, 0);
+}
+.hd{
+    display:table-cell;
 }
 *{
     transition: 0.3s
-}
-header{
-    height: 110;
-    text-align: center;
 }
 #imgg{
     text-align: center;
