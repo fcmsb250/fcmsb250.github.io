@@ -22,7 +22,7 @@ header{
     transition: 0.3s
 }
 #imgg{
-    text-align: center;
+    text-align: left;
 }
 .se{
     text-align: right;
@@ -30,6 +30,7 @@ header{
 }
 #yj{
     width: 25;
+    text-align:right;
 }
 section{
     text-align: center;
