@@ -17,6 +17,9 @@ header{
 .hd{
     display:table-cell;
 }
+he{
+    margin-bottom:-25px;
+}
 *{
     transition: 0.3s
 }
