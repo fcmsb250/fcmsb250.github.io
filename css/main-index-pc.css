@@ -9,6 +9,7 @@ body{
 }
 header{
     height: 110;
+    width:100%;
     text-align: center;
     display: table;
     table-layout: fixed;
