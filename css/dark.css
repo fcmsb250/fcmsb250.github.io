@@ -16,11 +16,11 @@ section:hover{
 }
 button:hover,input:hover{
     border: 2px solid rgb(100, 100, 100);
-}
+}/*
 header:hover{
     border-bottom: 4px solid rgba(50, 50, 0, 0.8);
     background-color: rgba(0, 0, 0, 0.5);
-}
+}*/
 .link:link,.link:active,.link:visited{
     color: white;
     text-decoration: none;
