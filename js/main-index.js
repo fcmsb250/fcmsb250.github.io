@@ -2,21 +2,17 @@ var bb=1;
 var cc,yj,su,sup;
 yj=0;
 su=0;
-sup=0;
+sup=0;/*
 function changeImage(){
     element=document.getElementById('imgg');
-    im=document.getElementById("ii");
     bb=bb+1
     if (bb >= 4) {
         bb=1;
         element.src="/images/logo"+String(bb)+".png";
-        im.href="/images/logo"+String(bb)+".png";
     }else{
         element.src="/images/logo"+String(bb)+".png";
-        im.href="/images/logo"+String(bb)+".png";
     }
-    
-}
+}*/
 function hehe(){
         var sn=[42,41],dz=43,fx=1,n,ctx=document.getElementById("can").getContext("2d");
     function draw(t,c){
