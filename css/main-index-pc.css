@@ -23,9 +23,9 @@ header{
     transition: 0.3s
 }
 #imgg{
-    text-align: left;
     width: 50;
     height: 50;
+    vertical-align: middle;
 }
 section{
     text-align: center;
@@ -36,4 +36,7 @@ section{
     width: 100%;
     text-align: center;
     
+}
+#yj{
+    vertical-align: middle;
 }
