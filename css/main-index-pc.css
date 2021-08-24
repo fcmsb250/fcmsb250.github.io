@@ -8,7 +8,7 @@ body{
     
 }
 header{
-    height: 110;
+    height: 50;
     width:100%;
     text-align: center;
     display: table;
@@ -17,16 +17,15 @@ header{
 }
 .hd{
     display:table-cell;
+    height:50;
 }
 *{
     transition: 0.3s
 }
 #imgg{
     text-align: left;
-}
-.ri{
-    text-align: right;
-    width: 325;
+    width: 50;
+    height: 50;
 }
 section{
     text-align: center;
