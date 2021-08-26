@@ -7,18 +7,6 @@ body{
     /* text-align: center; */
     
 }
-header{
-    height: 50;
-    width:100%;
-    text-align: center;
-    display: table;
-    table-layout: fixed;
-    border-bottom: 4px solid rgba(0, 0, 0, 0);
-}
-.hd{
-    display:table-cell;
-    height:50;
-}
 *{
     transition: 0.3s
 }
@@ -39,4 +27,23 @@ section{
 }
 #yj{
     vertical-align: middle;
+}
+header ul {
+  background-color:Black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+}
+
+header li {
+  float: left;
+}
+.hd{
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
