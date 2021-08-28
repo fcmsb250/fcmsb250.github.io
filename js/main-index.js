@@ -44,8 +44,11 @@ function button() {
     if (ee=="dsyisverycool"){
         su=1;
         alert("矮油,夸的人家都不好意思了");
-    }else{
-        window.open("https://www.baidu.com/s?wd="+ee);
+    }
+    if (ee=="阴乐"){
+        document.getElementById("boddy").style.background="url(/images/tyunfile.71360.jpg)"
+        var mus=new Audio("/sounds/music.mp3")
+        mus.play()
     }
 }
 var a=1
