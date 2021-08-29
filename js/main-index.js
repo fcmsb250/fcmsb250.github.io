@@ -46,17 +46,27 @@ function button() {
         alert("矮油,夸的人家都不好意思了");
     }
     if (ee=="阴乐"){
-        document.getElementById("boddy").style.background="url(/images/tyunfile.71360.jpg)"
-        var mus=new Audio("/sounds/music.mp3")
-        mus.play()
+        document.getElementById("boddy").style.background="url(/images/tyunfile.71360.jpg)";
+        var mus=new Audio("/sounds/music.mp3");
+        mus.play();
     }
     if (ee=="印尼宽带"){
-        document.getElementById("boddy").style.background="url(/images/inews.gtimg.jpg)"
-        var mus=new Audio("/sounds/yyy.mp3")
-        mus.play()
+        document.getElementById("boddy").style.background="url(/images/inews.gtimg.jpg)";
+        var mus=new Audio("/sounds/yyy.mp3");
+        mus.play();
     }
     if (ee=="压迫感"){
-        document.getElementById("boddy").style.background="url(/images/img1.jiemian.jpg)"
+        document.getElementById("boddy").style.background="url(/images/img1.jiemian.jpg)";
+    }
+    if (ee=="大合唱"){
+        var mus=new Audio("/sounds/yyy.mp3");
+        mus.play();
+        var mus=new Audio("/sounds/yyy.mp3")
+        mus.play()
+        var mus=new Audio("/sounds/yyy.mp3")
+        mus.play()
+        var mus=new Audio("/sounds/yyy.mp3")
+        mus.play()
     }
 }
 var a=1
@@ -95,10 +105,10 @@ function cba(){
 }
 function suprise(){
     if (su==1){
-        sup=sup+1
+        sup=sup+1;
         if (sup>=10){
             alert("行了,别敲敲敲了");
-            document.getElementById("sup").style.display=""
+            document.getElementById("sup").style.display="";
             document.getElementById("su").href="css/suprise.css";
         }
     }
