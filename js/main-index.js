@@ -55,6 +55,9 @@ function button() {
         var mus=new Audio("/sounds/yyy.mp3")
         mus.play()
     }
+    if (ee=="压迫感"){
+        document.getElementById("boddy").style.background="url(/images/img1.jiemian.jpg)"
+    }
 }
 var a=1
 function xxxx() {
