@@ -29,7 +29,7 @@ section{
     vertical-align: middle;
 }
 header ul {
-  background-color:White;
+  /*background-color:White;*/
   list-style-type: none;
   margin: 0;
   padding: 0;
