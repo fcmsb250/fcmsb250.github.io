@@ -51,7 +51,7 @@ function button() {
         mus.play()
     }
     if (ee=="印尼宽带"){
-        document.getElementById("boddy").style.background="url(/images/inews.gtimg(1).jpg)"
+        document.getElementById("boddy").style.background="url(/images/inews.gtimg.jpg)"
         var mus=new Audio("/sounds/yyy.mp3")
         mus.play()
     }
