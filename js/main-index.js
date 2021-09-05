@@ -58,14 +58,8 @@ function button() {
     if (ee=="压迫感"){
         document.getElementById("boddy").style.background="url(/images/img1.jiemian.jpg)";
     }
-    if (ee=="大合唱"){
-        var mus=new Audio("/sounds/yyy.mp3");
-        mus.play();
-        var mus=new Audio("/sounds/yyy.mp3")
-        mus.play()
-        var mus=new Audio("/sounds/yyy.mp3")
-        mus.play()
-        var mus=new Audio("/sounds/yyy.mp3")
+    if (ee=="手机清灰"){
+        var mus=new Audio("/sounds/手机清灰.mp3")
         mus.play()
     }
 }
