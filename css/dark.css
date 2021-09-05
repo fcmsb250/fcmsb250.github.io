@@ -4,7 +4,7 @@ section,header ul{
 body{
     color: rgb(255, 255, 255);
     filter: brightness(70%);
-    background:url(/images/bg3.png);
+    background:url(../images/bg3.png);
 }
 button,input{
     background-color:black;
