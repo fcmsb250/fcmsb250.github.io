@@ -1,9 +1,10 @@
 section,header ul{
+    backdrop-filter: blur(5px) saturate(150%);
     background-color:rgba(255, 255, 255, 0.5);
 }
 body{
     color: black;
-    background:url(../images/bg2.png);
+    background:url(/images/bg2.png);
 }
 button,input{
     background-color:white;
