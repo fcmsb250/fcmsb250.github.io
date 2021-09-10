@@ -46,20 +46,20 @@ function button() {
         alert("矮油,夸的人家都不好意思了");
     }
     if (ee=="阴乐"){
-        document.getElementById("boddy").style.background="url(../images/tyunfile.71360.jpg)";
+        document.getElementById("boddy").style.background="url(/images/tyunfile.71360.jpg)";
         var mus=new Audio("../sounds/music.mp3");
         mus.play();
     }
     if (ee=="印尼宽带"){
-        document.getElementById("boddy").style.background="url(../images/inews.gtimg.jpg)";
+        document.getElementById("boddy").style.background="url(/images/inews.gtimg.jpg)";
         var mus=new Audio("../sounds/yyy.mp3");
         mus.play();
     }
     if (ee=="压迫感"){
-        document.getElementById("boddy").style.background="url(../images/img1.jiemian.jpg)";
+        document.getElementById("boddy").style.background="url(/images/img1.jiemian.jpg)";
     }
     if (ee=="手机清灰"){
-        var mus=new Audio("../sounds/手机清灰.mp3")
+        var mus=new Audio("/sounds/手机清灰.mp3")
         mus.play()
     }
 }
@@ -82,10 +82,10 @@ function hhh() {
 }
 function abc(){
     if (yj == 0){
-        document.getElementById("theme").href="../css/light.css";
+        document.getElementById("theme").href="/css/light.css";
     }
     if (yj == 1){
-        document.getElementById("theme").href="../css/dark.css";
+        document.getElementById("theme").href="/css/dark.css";
     }
 }
 function cba(){
