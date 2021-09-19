@@ -87,6 +87,7 @@ header ul {
     /* position: sticky; */
     top: 0;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 header li {
@@ -98,10 +99,10 @@ header li {
     padding: 6px 24px;
     text-decoration: none;
 }
-.he{
+/* .he{
     height: 112.88px;
     width: 100%;
-}
+} */
 header{
     display: flex;
     justify-content: center;

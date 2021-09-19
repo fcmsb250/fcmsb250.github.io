@@ -121,3 +121,13 @@ function startWorker(){
 function stopWorker(){ 
     w.terminate();
 }
+
+// function mymenu(){
+
+// }
+window.onload =function(){
+    document.getElementById("hea").style.height=String(document.getElementById("ul11").clientHeight)+"px" 
+}
+window.onresize = function(){
+    document.getElementById("hea").style.height=String(document.getElementById("ul11").clientHeight)+"px" 
+}
