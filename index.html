@@ -5,8 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>DSY的主页</title>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5224062441021744"
-     crossorigin="anonymous"></script>
         <link id="ii" rel="icon" type="image/png" href="/images/logo1.png">
         <script src="/js/main-index.js"></script>
         <!-- <script src="https://activity.kugou.com/vo-activity/fa339ef0-2270-11ea-8b2a-c3556712becb/dist/kgPlayerV2.min.js"></script> -->
@@ -17,14 +15,14 @@
     <body id="boddy"> 
         <!-- <div class="sup"> -->
         <!-- <base href=""> -->
-        <img class="bg" src="https://api.sunweihu.com/api/sjbz/api.php?lx=fengjing"/>
+        <img class="bg" id='bg' src="https://api.sunweihu.com/api/sjbz/api.php?lx=fengjing"/>
         <div id="hea" class="he"></div>
         <header id="header">
             <ul id="ul11" class="ul1">
                 <li><svg width="50" height="50" class="hd" id="imgg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M4 42H44" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="8" y="26" width="8" height="16" rx="2" fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round"/><path d="M12 34H13" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="4" width="24" height="38" rx="2" fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round"/><rect x="22" y="10" width="4" height="4" fill="#333"/><rect x="30" y="10" width="4" height="4" fill="#333"/><rect x="22" y="17" width="4" height="4" fill="#333"/><rect x="30" y="17" width="4" height="4" fill="#333"/><rect x="30" y="24" width="4" height="4" fill="#333"/><rect x="30" y="31" width="4" height="4" fill="#333"/></svg></li>
                 <li><h1 class="title hd" onmousedown="javascript:suprise()">DSY的主页</h1></li>
                 <li><input class="hd" id="inp" type="text"></li>
-                <li><button class="hd" id="bu1" onclick="button()">没用的按钮</button></li>
+                <li><button class="hd" id="bu1" onclick="button()">搜索百度</button></li>
                 <!-- <li><div class="menu"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></li> -->
                 <li><a href="https://github.com/dsy4567" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></li>
             </ul>
@@ -37,13 +35,13 @@
             <div class="b">
                 <section>
                     <h1>贪吃蛇</h1>
-                    <button id="bu2" onclick="javascript:hehe()">开始游戏</button>
+                    <a href="/snake.html"><button id="bu2">开始游戏</button></a>
                     <!-- </br> -->
                     <!-- <canvas style="background-color:black;"  id="can" width="400" height="400">haha</canvas> -->
                 </section>
                 </br>
                 <section>
-                    <h1>无限弹窗</h1>
+                    <h1>啥也不是</h1>
                     <a onmousedown="javascript:hhh()">别点我,没用的</a>
                 </section>
                 </br>
@@ -69,7 +67,7 @@
                 <br>
                 <section>
                     <h1>最近更新</h1>
-                    <a>2021.9.19 15时</a>
+                    <a>2021.9.19 21时</a>
                 </section>
             </div>
         </div>

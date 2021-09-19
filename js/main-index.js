@@ -1,8 +1,11 @@
 var bb=1;
 var cc,yj,su,sup;
+var texts
 yj=0;
 su=0;
-sup=0;/*
+sup=0;
+texts=["如果李白没死的话，那么他现在还活着","子曰:三人行，必有三人","1.你正在看这些文字\n2.人不能在伸出舌头时呼吸\n3.你在尝试第二条\n4.你在笑\n6.没有第五条\n7.没有第零条\n9.没有第八条\n10.你看完了这些废话","吃面不吃蒜，等于没吃蒜","千万别买爱疯13,用这些省下来的钱买一个爱疯13他不香吗?","你知道吗?人每呼吸60秒,就会减少一分钟的寿命","为什么我听说过冬瓜南瓜西瓜却没有听说过北瓜?","听说发芽的土豆是最好的安眠药,要不吃一个逝一世"]
+/*
 function changeImage(){
     element=document.getElementById('imgg');
     bb=bb+1
@@ -13,54 +16,42 @@ function changeImage(){
         element.src="/images/logo"+String(bb)+".png";
     }
 }*/
-function hehe(){
-        var sn=[42,41],dz=43,fx=1,n,ctx=document.getElementById("can").getContext("2d");
-    function draw(t,c){
-        ctx.fillStyle=c;
-        ctx.fillRect(t%20*20+1,~~(t/20)*20+1,18,18);
-    }
-    document.onkeydown=function(e){fx=sn[1]-sn[0]==(n=[-1,-20,1,20][(e||event).keyCode-37]||fx)?fx:n};
-    !function(){
-        sn.unshift(n=sn[0]+fx);
-        if(sn.indexOf(n,1)>0 || n<0||n>399||fx==1&&n%20==0||fx==-1&&n%20==19){
-            return alert("GAME OVER");
-            refesh(); 
-        } 
-        draw(n,"Lime");
-        if(n==dz){
-            while(sn.indexOf(dz=~~(Math.random()*400))>=0);
-            draw(dz,"Red");
-        }else{
-            draw(sn.pop(),"black");
-        }
-        setTimeout(arguments.callee,130);
-    }();
-    function refesh(){
-          location.reload();
-    }
-}
 function button() {
     var ee=document.getElementById("inp").value;
-    if (ee=="dsyisverycool"){
-        su=1;
-        alert("矮油,夸的人家都不好意思了");
-    }
-    if (ee=="阴乐"){
-        document.getElementById("boddy").style.background="url(/images/tyunfile.71360.jpg)";
-        var mus=new Audio("../sounds/music.mp3");
-        mus.play();
-    }
-    if (ee=="印尼宽带"){
-        document.getElementById("boddy").style.background="url(/images/inews.gtimg.jpg)";
-        var mus=new Audio("../sounds/yyy.mp3");
-        mus.play();
-    }
-    if (ee=="压迫感"){
-        document.getElementById("boddy").style.background="url(/images/img1.jiemian.jpg)";
-    }
-    if (ee=="手机清灰"){
-        var mus=new Audio("/sounds/手机清灰.mp3")
-        mus.play()
+    switch (ee) {
+        case "dsyisverycool":
+            su=1;
+            alert("矮油,夸的人家都不好意思了");
+            break;
+        case "阴乐":
+            document.getElementById('bg').style.display='none'
+            document.getElementById("boddy").style.background="url(/images/tyunfile.71360.jpg)";
+            var mus=new Audio("../sounds/music.mp3");
+            mus.play();
+            break;
+        case "印尼宽带":
+            document.getElementById('bg').style.display='none'
+            document.getElementById("boddy").style.background="url(/images/inews.gtimg.jpg)";
+            var mus=new Audio("../sounds/yyy.mp3");
+            mus.play();
+            break;
+        case "压迫感":
+            document.getElementById('bg').style.display='none'
+            document.getElementById("boddy").style.background="url(/images/img1.jiemian.jpg)";
+            break;
+        case "手机清灰":
+            document.getElementById('bg').style.display='none'
+            document.getElementById("boddy").style.background="url(/images/erji.jpg)";
+            var mus=new Audio("/sounds/手机清灰.mp3")
+            mus.play()
+            break;
+        case "最炫穷哈风":
+            var mus=new Audio("/sounds/最炫穷哈风.mp3")
+            mus.play()
+            break;
+        default:
+            window.open('https://www.baidu.com/s?wd='+String(ee))
+            break;
     }
 }
 var a=1
@@ -74,9 +65,8 @@ function xxxx() {
 }
 function hhh() {
     if (a==10){
-        alert('都说了别在那点了,你™是不是无聊');
-        alert('那我给你讲个故事吧');
-        xxxx();
+        alert(texts[Math.floor(Math.random()*8)]);
+        a=0
     }
     a=a+1
 }
