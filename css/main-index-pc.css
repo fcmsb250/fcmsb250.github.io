@@ -8,7 +8,7 @@
 }
 ::-webkit-scrollbar{
     width:8px;
-    height:16px;
+    height:8px;
     background-color:rgb(255, 255, 255);
 }
 ::-webkit-scrollbar-track{
@@ -31,7 +31,7 @@ body{
     padding: 0;
     margin: 0;
     background:url(/images/sxc.jpg);
-    
+    /* height: 100%; */
 }
 *{
     transition: 0.3s
@@ -41,18 +41,6 @@ body{
     height: 50;
     vertical-align: middle;
 }
-/* @media only screen and (max-width: 600px) {
-    section{
-        margin: 8px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-evenly;
-        text-align: center;
-        width: 90%;
-        height: 250px;
-    }
-} */
 section{
     margin: 8px;
     display: flex;
@@ -143,7 +131,51 @@ header{
 }
 .bar:nth-of-type(3) {
     animation: rotateL 1.5s cubic-bezier(0.5, 0.2, 0.2, 1);
-} */
-/* .ul2{
+}
+.ul2{
     display: none;
 } */
+.tcs .tc{
+    width: 95%;
+    height: 500px;
+}
+.tcs .tcc{
+    width: 95%;
+}
+.ayhgame section{
+    width: 1000px;
+    height: 500px;
+}
+.tcs,.ayhgame,.about{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#back{
+    display: none;
+}
+
+@media only screen and (max-width: 1032px) {
+    .tcs .tc{
+        width: 95%;
+        height: 500px;
+    }
+    .ayhgame section{
+        height: 1000px;
+    }
+    .tcs,.ayhgame{
+        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+a:link,a:visited{
+    text-decoration: none;
+    color: black;
+}
+a:hover,a:active{
+    text-decoration: underline;
+    color: black;
+}
