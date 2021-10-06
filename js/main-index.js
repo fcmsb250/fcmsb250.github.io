@@ -168,6 +168,19 @@ function suprise() {
 }
 var w;
 window.onload = function () {
+    switch (GetQueryString("page")) {
+        case "tcs":
+            showtcs();
+            break;
+        case "ayh":
+            showayhgame();
+            break;
+        case "about":
+            showabout();
+            break;
+        default:
+            break;
+    }
     document.querySelector(".loa").style.display = "none";
     document.getElementById("hea").style.height =
         String(document.getElementById("ul11").clientHeight) + "px";
@@ -221,12 +234,14 @@ document.oncopy = function () {
     sendmsg("你复制这玩意干甚");
 };
 function sendmsg(msg) {
-    if (document.querySelector(".msg").offsetTop != -72) {
-        setTimeout(sendmsg, 500, msg);
+    document.querySelector(".ms").style.display="flex";
+    if (!document.querySelector(".msg").offsetTop) {
+        // setTimeout(sendmsg, 500, msg);
     } else {
         document.querySelector(".text").innerHTML = msg;
         var to = setTimeout(() => {
             document.querySelector(".msg").style.animation = undefined;
+            document.querySelector(".ms").style.display="none";
             clearInterval(to);
         }, 6000);
         document.querySelector(".msg").style.animation = "mymsg 6s";
@@ -254,4 +269,14 @@ function sendmsg(msg) {
     //         }
     //     }
     // }, 5000);
+}
+function GetQueryString(name) { 
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+    var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+    var context = ""; 
+    if (r != null) 
+         context = r[2]; 
+    reg = null; 
+    r = null; 
+    return context == null || context == "" || context == "undefined" ? "" : context; 
 }
