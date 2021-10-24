@@ -1,8 +1,18 @@
 section,
-header ul {
-  backdrop-filter: blur(5px) saturate(150%);
+header ul,
+#fullscr {
+  backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.3);
 }
+/* .sec-bg {
+  filter: blur(5px) saturate(150%);
+  position: relative;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+} */
 body {
   color: black;
 }
@@ -19,15 +29,14 @@ section:hover {
 }
 button:hover,
 input:hover {
-  border: 2px solid black;
+  border: 2px solid rgba(0, 140, 186, 0.5);
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 } /*
 header:hover{
     border-bottom: 4px solid white;
     background-color: rgba(255, 255, 255, 0.5);
 }*/
-section:hover,
-input:hover,
-button:hover {
+section:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

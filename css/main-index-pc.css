@@ -9,10 +9,13 @@
 section,
 button,
 input,
-header ul {
-  border-radius: 10px;
+header ul,
+#fullscr,
+iframe,
+.loa .progress {
+  border-radius: 8px;
 }
-body {
+#boddy {
   background-size: cover;
   /* background-attachment: fixed; */
   /* text-align: center; */
@@ -50,18 +53,13 @@ section {
   vertical-align: middle;
 }
 header ul {
-  position: fixed;
   width: 95%;
-  z-index: 9;
   display: flex;
   align-items: center;
   /*background-color:White;*/
   list-style-type: none;
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
-  /* position: sticky; */
-  top: 0;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -83,8 +81,11 @@ header li {
     width: 100%;
 } */
 header {
+  top: 0;
+  position: sticky;
   display: flex;
   justify-content: center;
+  z-index: 9;
 }
 .a {
   display: flex;
@@ -134,13 +135,13 @@ header {
   width: 95%;
 }
 .ayhgame section {
-  width: 1000px;
-  height: 500px;
+  height: 600px;
+  width: 95%;
 }
 .tcs,
 .ayhgame,
 .about {
-  display: none;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -151,18 +152,30 @@ header {
 @media only screen and (max-width: 1032px) {
   .tcs .tc {
     width: 95%;
-    height: 500px;
+    height: 600px;
   }
   .ayhgame section {
-    height: 500px;
+    height: 600px;
+    width: 95%;
   }
   .tcs,
   .ayhgame {
-    display: none;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
+  .bgmob {
+    display: initial;
+  }
+  .bgpc {
+    display: none;
+  }
+}
+.bgpc {
+  display: initial;
+}
+.bgmob {
+  display: none;
 }
 a:link,
 a:visited {
@@ -230,4 +243,20 @@ section .github-corner {
   position: relative;
   left: 50%;
   top: -15.5%;
+}
+#page {
+  display: none;
+  margin: 0px;
+  padding: 0px;
+}
+#fullscr {
+  width: 32px;
+  height: 32px;
+  /* display: flex; */
+  position: fixed;
+  top: 25%;
+  left: 0px;
+  align-items: flex-end;
+  justify-content: center;
+  display: none;
 }

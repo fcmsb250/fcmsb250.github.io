@@ -1,15 +1,6 @@
 var bb = 1;
 var cc, yj, su, sup;
 var texts;
-var sUserAgent = navigator.userAgent.toLowerCase(); //浏览器的用户代理设置为小写，再进行匹配
-var isIpad = sUserAgent.match(/ipad/i) == "ipad"; //或者利用indexOf方法来匹配
-var isIphoneOs = sUserAgent.match(/iphone os/i) == "iphone";
-var isMidp = sUserAgent.match(/midp/i) == "midp"; //移动信息设备描述MIDP是一套Java应用编程接口，多适用于塞班系统
-var isUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; //CVS标签
-var isUc = sUserAgent.match(/ucweb/i) == "ucweb";
-var isAndroid = sUserAgent.match(/android/i) == "android";
-var isCe = sUserAgent.match(/windows ce/i) == "windows ce";
-var isWM = sUserAgent.match(/windows mobil/i) == "windows mobil";
 yj = 0;
 su = 0;
 sup = 0;
@@ -23,17 +14,6 @@ texts = [
     "为什么我听说过冬瓜南瓜西瓜却没有听说过北瓜?",
     "听说吃发芽的土豆有助于睡眠,要不逝一世",
 ];
-/*
-function changeImage(){
-    element=document.getElementById('imgg');
-    bb=bb+1
-    if (bb >= 4) {
-        bb=1;
-        element.src="/images/logo"+String(bb)+".png";
-    }else{
-        element.src="/images/logo"+String(bb)+".png";
-    }
-}*/
 console.log("在下面输入 egg() 有惊喜");
 console.log(texts[Math.floor(Math.random() * 8)]);
 console.log(
@@ -47,57 +27,6 @@ function egg() {
     console.log(
         "在网页上方搜索框搜这些有惊喜:\n阴乐\n印尼宽带\n手机清灰\n压迫感\n最炫穷哈风\n什么歌最好听"
     );
-}
-function goback() {
-    document.getElementById("hea").style.display = "block";
-    document.getElementById("ul11").style.position = "fixed";
-    document.getElementById("ayh").src = "";
-    document.getElementById("ayhgame").style.display = "none";
-    document.getElementById("a").style.display = "initial";
-    document.getElementById("back").style.display = "none";
-    document.getElementById("imgg").style.display = "initial";
-    document.getElementById("tcs").style.display = "none";
-    document.getElementById("about").style.display = "none";
-    // document.getElementById("mininb666").src="";
-}
-function showtcs() {
-    if (
-        isIpad ||
-        isIphoneOs ||
-        isMidp ||
-        isUc7 ||
-        isUc ||
-        isAndroid ||
-        isCe ||
-        isWM
-    ) {
-        sendmsg("该游戏不支持移动设备");
-    } else {
-        document.getElementById("hea").style.display = "none";
-        document.getElementById("ul11").style.position = "initial";
-        document.getElementById("a").style.display = "none";
-        document.getElementById("back").style.display = "initial";
-        document.getElementById("imgg").style.display = "none";
-        document.getElementById("tcs").style.display = "flex";
-    }
-}
-function showayhgame() {
-    document.getElementById("hea").style.display = "none";
-    document.getElementById("ul11").style.position = "initial";
-    document.getElementById("a").style.display = "none";
-    document.getElementById("back").style.display = "initial";
-    document.getElementById("imgg").style.display = "none";
-    document.getElementById("ayhgame").style.display = "flex";
-    document.getElementById("ayh").src =
-        "https://gugeaoyunhuiyouxi.github.io/logos/2020/kitsune/rc6/kitsune20.html?hl=zh-CN";
-}
-function showabout() {
-    document.getElementById("a").style.display = "none";
-    document.getElementById("back").style.display = "initial";
-    document.getElementById("imgg").style.display = "none";
-    document.getElementById("mininb666").src =
-        "https://www.kugou.com/song/#hash=33878EA2226F27BCEB205BAB3EDD579C&album_id=46942452";
-    document.getElementById("about").style.display = "flex";
 }
 function button() {
     var ee = document.getElementById("inp").value;
@@ -146,27 +75,9 @@ function hhh() {
     }
     a = a + 1;
 }
-function abc() {
-    if (yj == 0) {
-        document.getElementById("theme").href = "/css/light.css";
-    }
-    if (yj == 1) {
-        document.getElementById("theme").href = "/css/dark.css";
-    }
-}
-function cba() {
-    if (yj == 0) {
-        yj = 1;
-    } else {
-        if (yj == 1) {
-            yj = 0;
-        }
-    }
-}
 function suprise() {
     hhh();
 }
-var w;
 window.onload = function () {
     switch (GetQueryString("page")) {
         case "tcs":
@@ -181,102 +92,116 @@ window.onload = function () {
         default:
             break;
     }
-    document.querySelector(".loa").style.display = "none";
-    document.getElementById("hea").style.height =
-        String(document.getElementById("ul11").clientHeight) + "px";
+    loa.style.display = "none";
+    // $("#page").width($(window).width());
+    // $("#page").height($(window).height());
 };
-window.onresize = function () {
-    document.getElementById("hea").style.height =
-        String(document.getElementById("ul11").clientHeight) + "px";
+document.onresize = function () {
+    // $("#page").width($(window).width());
+    // $("#page").height($(window).height());
 };
-function hehe() {
-    var sn = [42, 41],
-        dz = 43,
-        fx = 1,
-        n,
-        ctx = document.getElementById("can").getContext("2d");
-    function draw(t, c) {
-        ctx.fillStyle = c;
-        ctx.fillRect((t % 20) * 20 + 1, ~~(t / 20) * 20 + 1, 18, 18);
-    }
-    document.onkeydown = function (e) {
-        fx =
-            sn[1] - sn[0] == (n = [-1, -20, 1, 20][(e || event).keyCode - 37] || fx)
-                ? fx
-                : n;
-    };
-    !(function () {
-        sn.unshift((n = sn[0] + fx));
-        if (
-            sn.indexOf(n, 1) > 0 ||
-            n < 0 ||
-            n > 399 ||
-            (fx == 1 && n % 20 == 0) ||
-            (fx == -1 && n % 20 == 19)
-        ) {
-            return sendmsg("GAME OVER");
-            refesh();
-        }
-        draw(n, "Lime");
-        if (n == dz) {
-            while (sn.indexOf((dz = ~~(Math.random() * 400))) >= 0);
-            draw(dz, "Red");
-        } else {
-            draw(sn.pop(), "black");
-        }
-        setTimeout(arguments.callee, 130);
-    })();
-    function refesh() {
-        location.reload();
-    }
+function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
+    var context = "";
+    if (r != null) context = r[2];
+    reg = null;
+    r = null;
+    return context == null || context == "" || context == "undefined"
+        ? ""
+        : context;
 }
 document.oncopy = function () {
     sendmsg("你复制这玩意干甚");
 };
 function sendmsg(msg) {
-    document.querySelector(".ms").style.display="flex";
+    document.querySelector(".ms").style.display = "flex";
     if (!document.querySelector(".msg").offsetTop) {
         // setTimeout(sendmsg, 500, msg);
     } else {
         document.querySelector(".text").innerHTML = msg;
         var to = setTimeout(() => {
             document.querySelector(".msg").style.animation = undefined;
-            document.querySelector(".ms").style.display="none";
+            document.querySelector(".ms").style.display = "none";
             clearInterval(to);
         }, 6000);
         document.querySelector(".msg").style.animation = "mymsg 6s";
     }
-    // document.getElementById("text").innerHTML = msg;
-    // var m = document.getElementById("msg").style;
-    // var pos = -64;
-    // var id = setInterval(frame, 5);
-    // function frame() {
-    //     if (pos == 12) {
-    //         clearInterval(id);
-    //     } else {
-    //         pos++;
-    //         m.marginTop = pos + "px";
-    //     }
-    // }
-    // setTimeout(() => {
-    //     var id = setInterval(frame, 5);
-    //     function frame() {
-    //         if (pos == -64) {
-    //             clearInterval(id);
-    //         } else {
-    //             pos = pos - 1;
-    //             m.marginTop = pos + "px";
-    //         }
-    //     }
-    // }, 5000);
 }
-function GetQueryString(name) { 
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
-    var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
-    var context = ""; 
-    if (r != null) 
-         context = r[2]; 
-    reg = null; 
-    r = null; 
-    return context == null || context == "" || context == "undefined" ? "" : context; 
+var sUserAgent = navigator.userAgent.toLowerCase(); //浏览器的用户代理设置为小写，再进行匹配
+var isIpad = sUserAgent.match(/ipad/i) == "ipad"; //或者利用indexOf方法来匹配
+var isIphoneOs = sUserAgent.match(/iphone os/i) == "iphone";
+var isMidp = sUserAgent.match(/midp/i) == "midp"; //移动信息设备描述MIDP是一套Java应用编程接口，多适用于塞班系统
+var isUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4"; //CVS标签
+var isUc = sUserAgent.match(/ucweb/i) == "ucweb";
+var isAndroid = sUserAgent.match(/android/i) == "android";
+var isCe = sUserAgent.match(/windows ce/i) == "windows ce";
+var isWM = sUserAgent.match(/windows mobil/i) == "windows mobil";
+var loa = document.querySelector(".loa");
+var scra = document.getElementById("a");
+var back = document.getElementById("back");
+function showpage(url) {
+    loa.style.display = "initial";
+    scra.style.display = "none";
+    back.style.display = "initial";
+    document.getElementById("imgg").style.display = "none";
+    document.getElementById("page").src = url;
+    document.getElementById("page").style.display = "initial";
+    document.getElementById("fullscr").style.display = "flex";
+    document.getElementById("page").onload = function () {
+        loa.style.display = "none";
+    };
+    document.querySelector("#page").width = "100%";
+    document.querySelector("#page").height =
+        window.innerHeight - document.querySelector("#header").offsetHeight - 16;
+}
+function goback() {
+    scra.style.display = "initial";
+    back.style.display = "none";
+    document.getElementById("fullscr").style.display = "none";
+    document.getElementById("imgg").style.display = "initial";
+    document.getElementById("page").src = "";
+    document.getElementById("page").style.display = "none";
+}
+function showtcs() {
+    if (
+        isIpad ||
+        isIphoneOs ||
+        isMidp ||
+        isUc7 ||
+        isUc ||
+        isAndroid ||
+        isCe ||
+        isWM
+    ) {
+        sendmsg("该游戏不支持移动设备");
+    } else {
+        showpage("/page-tcs.html");
+    }
+}
+function showayhgame() {
+    showpage("/page-ayh.html");
+}
+function showabout() {
+    showpage("/page-about.html");
+}
+var ful = 0;
+function fullscr() {
+    switch (ful) {
+        case 0:
+            document.getElementById("header").style.display = "none";
+            document.querySelector("#page").height = window.innerHeight - 16;
+            ful = 1;
+            break;
+        case 1:
+            document.getElementById("header").style.display = "flex";
+            document.querySelector("#page").height =
+                window.innerHeight -
+                document.querySelector("#header").offsetHeight -
+                16;
+            ful = 0;
+        default:
+            break;
+    }
+    return ful;
 }
