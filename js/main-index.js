@@ -46,16 +46,19 @@ function button() {
             );
             break;
         case "印尼宽带":
+            document.getElementById('bg').style.display='none'
             document.getElementById("bgpc").src = "/images/inews.gtimg.jpg";
             document.getElementById("bgmob").src = "/images/inews.gtimg.jpg";
             var mus = new Audio("../sounds/yyy.mp3");
             mus.play();
             break;
         case "压迫感":
+            document.getElementById('bg').style.display='none'
             document.getElementById("bgpc").src = "/images/img1.jiemian.jpg";
             document.getElementById("bgmob").src = "/images/img1.jiemian.jpg";
             break;
         case "手机清灰":
+            document.getElementById('bg').style.display='none'
             document.getElementById("bgpc").src = "/images/erji.jpg";
             document.getElementById("bgmob").src = "/images/erji.jpg";
             var mus = new Audio("/sounds/手机清灰.mp3");
@@ -144,6 +147,8 @@ var loa = document.querySelector(".loa");
 var scra = document.getElementById("a");
 var back = document.getElementById("back");
 function showpage(url) {
+    document.getElementById('bg').src=''
+    document.getElementById('bg').style.display='none'
     loa.style.display = "initial";
     scra.style.display = "none";
     back.style.display = "initial";
@@ -159,6 +164,8 @@ function showpage(url) {
         window.innerHeight - document.querySelector("#header").offsetHeight - 16;
 }
 function goback() {
+    document.getElementById('bg').style.display='initial'
+    document.getElementById('bg').src='https://api.btstu.cn/sjbz/api.php?lx=fengjing&format=images&method=zsy'
     document.getElementById("bgpc").src = "/images/bg-pc.jfif";
     document.getElementById("bgmob").src = "/images/bg-mob.jpg";
     scra.style.display = "initial";

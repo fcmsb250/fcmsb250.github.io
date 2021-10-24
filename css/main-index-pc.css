@@ -172,10 +172,12 @@ header {
   }
 }
 .bgpc {
+  z-index: -2;
   display: initial;
 }
 .bgmob {
   display: none;
+  z-index: -2;
 }
 a:link,
 a:visited {
