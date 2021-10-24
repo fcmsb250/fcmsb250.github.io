@@ -46,15 +46,18 @@ function button() {
             );
             break;
         case "印尼宽带":
-            document.getElementById("bg").src = "/images/inews.gtimg.jpg";
+            document.getElementById("bgpc").src = "/images/inews.gtimg.jpg";
+            document.getElementById("bgmob").src = "/images/inews.gtimg.jpg";
             var mus = new Audio("../sounds/yyy.mp3");
             mus.play();
             break;
         case "压迫感":
-            document.getElementById("bg").src = "/images/img1.jiemian.jpg";
+            document.getElementById("bgpc").src = "/images/img1.jiemian.jpg";
+            document.getElementById("bgmob").src = "/images/img1.jiemian.jpg";
             break;
         case "手机清灰":
-            document.getElementById("bg").src = "/images/erji.jpg";
+            document.getElementById("bgpc").src = "/images/erji.jpg";
+            document.getElementById("bgmob").src = "/images/erji.jpg";
             var mus = new Audio("/sounds/手机清灰.mp3");
             mus.play();
             break;
@@ -156,6 +159,8 @@ function showpage(url) {
         window.innerHeight - document.querySelector("#header").offsetHeight - 16;
 }
 function goback() {
+    document.getElementById("bgpc").src = "/images/bg-pc.jfif";
+    document.getElementById("bgmob").src = "/images/bg-mob.jpg";
     scra.style.display = "initial";
     back.style.display = "none";
     document.getElementById("fullscr").style.display = "none";
@@ -184,6 +189,8 @@ function showayhgame() {
 }
 function showabout() {
     showpage("/page-about.html");
+    document.getElementById("bgpc").src = "/images/dongcidaci.gif";
+    document.getElementById("bgmob").src = "/images/dongcidaci.gif";
 }
 var ful = 0;
 function fullscr() {
