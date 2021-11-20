@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
-    <base target="_blank" />
     <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
     <title>DSY的主页</title>
     <style>
@@ -39,17 +38,65 @@
         }
     </style>
     <link rel="stylesheet" href="/css/scr.css">
+    <link id="ii" rel="icon" type="image/png" href="/favicon.ico">
     <link id="theme" rel="stylesheet" type="text/css" href="/css/light.css">
     <link id="su" rel="stylesheet" type="text/css" href="/css/scr.css">
     <link id="cs" rel="stylesheet" type="text/css" href="/css/main-index-pc.css">
 </head>
 
-<body>
+<body id="boddy">
+    <div class="start">
+        <div class="logoborder">
+            <div class="mylogo">
+                <div class="logotext">D</div>
+            </div>
+        </div>
+        <div class="next"><svg onclick="aa(Number($('.start').height()));" width="64" height="64" viewBox="0 0 48 48"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" fill="white" fill-opacity="0.01" />
+                <path d="M36 12L24 24L12 12" stroke="#333" stroke-width="4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M36 24L24 36L12 24" stroke="#333" stroke-width="4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg></a>
+
+        </div>
+    </div>
+    <!-- <div class="sup"> -->
+    <!-- <base href=""> -->
+    <div class="no360">
+        <a href="http://google.cn">快点我</a>
+        <h1 id="no360top">这年头谁还用三位数呢</h1>
+        <h1>只要你滑到底就让你继续访问</h1>
+        <h1>卡忙北鼻</h1>
+        <h1>还剩99%</h1>
+        <div class="ohno"></div>
+        <h1>还剩80%</h1>
+        <div class="ohno"></div>
+        <h1>还剩70%</h1>
+        <div class="ohno"></div>
+        <h1>还剩60%</h1>
+        <div class="ohno"></div>
+        <h1>还剩50%,加油</h1>
+        <div class="ohno"></div>
+        <h1>还剩40%</h1>
+        <div class="ohno"></div>
+        <h1>还剩30%</h1>
+        <div class="ohno"></div>
+        <h1>还剩20%</h1>
+        <div class="ohno"></div>
+        <h1>还剩10%,快了</h1>
+        <div class="ohno"></div>
+        <a href="https://www.google.cn/chrome/">
+            <h1>年轻人，我为你那比周恩来不搞特殊时还倔的精神而感动，赶紧把三位数换了吧</h1>
+        </a>
+        <button onclick="JavaScript:nb()">如果你决定换掉三位数，请不要点这里</button>
+    </div>
+    <script src="/js/no360.js"></script>
     <div class="mybody">
         <div class="loa">
             <div class="progress"></div>
         </div>
-        <div class="bg"></div>
         <div class="ms">
             <div class="msg">
                 <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,6 +114,8 @@
                 <div class="text">欢迎访问我的主页</div>
             </div>
         </div>
+        <!-- <iframe src="https://tiktok.com" frameborder="0"></iframe> -->
+        <div class="bg"></div>
         <header id="header main">
             <ul id="ul11" class="ul1">
                 <li>
@@ -129,153 +178,121 @@
                 <li></li>
             </ul>
         </header>
-        <div class="about aa" id="about">
-            <section>
-                <div class="secbg"></div>
-                <h1>最近更新</h1>
-                <p>2021.10.24 17时</p>
-            </section>
-            <section>
-                <h1>动感bgm</h1><audio id="audios" src="/sounds/highbgm.m4a" preload="1" autoplay="1" controls="1"
-                    loop="loop">动感bgm</audio>
-            </section>
-            <br>
-            <section>
-                <h1>特别鸣谢</h1>
-                <div class="links">
-                    <a href="https://github.com"><button>github<svg xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15"
-                                height="15" class="icon outbound">
-                                <path fill="currentColor"
-                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
-                                </path>
-                                <polygon fill="currentColor"
-                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
-                                </polygon>
-                            </svg></button></a>
-                    <a href="https://api.btstu.cn/"><button>搏天api<svg xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15"
-                                height="15" class="icon outbound">
-                                <path fill="currentColor"
-                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
-                                </path>
-                                <polygon fill="currentColor"
-                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
-                                </polygon>
-                            </svg></button></a>
-                    <a href="https://www.w3school.com.cn/"><button>w3school<svg xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15"
-                                height="15" class="icon outbound">
-                                <path fill="currentColor"
-                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
-                                </path>
-                                <polygon fill="currentColor"
-                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
-                                </polygon>
-                            </svg></button></a>
-                    <a href="https://iconpark.oceanengine.com/home"><button>iconpark<svg
-                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
-                                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                <path fill="currentColor"
-                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
-                                </path>
-                                <polygon fill="currentColor"
-                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
-                                </polygon>
-                            </svg></button></a>
-                    <a href="https://fastgit.org"><button>fastgit<svg xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15"
-                                height="15" class="icon outbound">
-                                <path fill="currentColor"
-                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
-                                </path>
-                                <polygon fill="currentColor"
-                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
-                                </polygon>
-                            </svg></button></a>
-                    <a href="https://www.mini1.cn/index"><button>神秘网页<svg xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15"
-                                height="15" class="icon outbound">
-                                <path fill="currentColor"
-                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
-                                </path>
-                                <polygon fill="currentColor"
-                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
-                                </polygon>
-                            </svg></button></a>
-                    <a href="https://www.runoob.com/"><button>菜鸟教程<svg xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15"
-                                height="15" class="icon outbound">
-                                <path fill="currentColor"
-                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
-                                </path>
-                                <polygon fill="currentColor"
-                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
-                                </polygon>
-                            </svg></button></a><a href="https://www.kugou.com/"><button>酷狗音乐<svg
-                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
-                                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
-                                <path fill="currentColor"
-                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
-                                </path>
-                                <polygon fill="currentColor"
-                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
-                                </polygon>
-                            </svg></button></a>
+        <div class="a" id="a">
+            <div class="b">
+                <div class="division">
+                    <div class="line"></div>
+                    <h1>实用工具</h1>
+                    <div class="line"></div>
                 </div>
-            </section>
-            <section>
-                <h1>更新内容</h1>
-                <ul class="upd">
-                    <li style="list-style: none;">
-                        <h3>2021.10.24</h3>
-                    </li>
-                    <li>修复了背景图片变成孙笑川的问题</li>
-                    <li>修复了关于本页中动感BGM无法播放的问题</li>
-                    <li>优化细节</li>
-                    <li>优化游戏体验</li>
-                    <li style="list-style: none;">
-                        <h3>2021.10.4</h3>
-                    </li>
-                    <li>新增动感bgm</li>
-                    <li>特别鸣谢增添一些网站</li>
-                    <li>新增破解4399防沉迷</li>
-                    <li>更改了彩蛋:阴乐，可在上方搜索后触发</li>
-                    <li>提示框改版</li>
-                    <li>新增一些特效</li>
-                    <li>修复了一些bug</li>
-                    <li>按下f12有惊喜</li>
-                </ul>
-            </section>
-            <br>
-        </div>
-        <div id="fullscr" onmousedown="javascript:fullscr()">
-            <div id="full"><svg width="24" height="24" viewBox="0 0 48 48" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <rect width="48" height="48" fill="white" fill-opacity="0.01" />
-                    <path d="M6 6L16 15.8995" stroke="#333" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M6 41.8995L16 32" stroke="#333" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M42.0001 41.8995L32.1006 32" stroke="#333" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M41.8995 6L32 15.8995" stroke="#333" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M33 6H42V15" stroke="#333" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M42 33V42H33" stroke="#333" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M15 42H6V33" stroke="#333" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M6 15V6H15" stroke="#333" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+                <section>
+                    <h1>破解4399防沉迷</h1>
+                    <a target="_blank"
+                        href="https://greasyfork.org/zh-CN/scripts/433257-%E7%A0%B4%E8%A7%A34399%E9%98%B2%E6%B2%89%E8%BF%B7%E5%92%8C%E5%B1%8F%E8%94%BD%E5%B9%BF%E5%91%8A"><button>点我<svg
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
+                                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                <path fill="currentColor"
+                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                                </path>
+                                <polygon fill="currentColor"
+                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                                </polygon>
+                            </svg></button></a>
+                </section>
+                <section>
+                    <h1>随机废话</h1>
+                    <button onclick="javascript:hhh()">点这里</button>
+                </section>
+                <section>
+                    <h1>一键清理浏览器缓存</h1>
+                    <button onclick="javascript:sendmsg('清理成功')">点击清理</button>
+                </section>
+                <div class="division">
+                    <div class="line"></div>
+                    <h1>小游戏</h1>
+                    <div class="line"></div>
+                </div>
+                <section>
+                    <h1>贪吃蛇</h1>
+                    <!-- <div class="sec-bg"></div> -->
+                    <a href="/page-tcs.html"><button id="bu2">开始游戏</button></a>
+                    <!-- </br> -->
+                    <!-- <canvas style="background-color:black;"  id="can" width="400" height="400">haha</canvas> -->
+                </section>
+                <section>
+                    <h1>谷歌奥运会游戏</h1>
+                    <a target="_blank"
+                        href="https://www.google.com/logos/2020/kitsune/rc6/kitsune20.html?hl=zh-CN"><button>有梯子的点这里<svg
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
+                                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                <path fill="currentColor"
+                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                                </path>
+                                <polygon fill="currentColor"
+                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                                </polygon>
+                            </svg></button></a>
+                    <a target="_blank"
+                        href="https://gugeaoyunhuiyouxi.github.io/logos/2020/kitsune/rc6/kitsune20.html?hl=zh-CN"><button>玩不了的点这里<svg
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px"
+                                viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+                                <path fill="currentColor"
+                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                                </path>
+                                <polygon fill="currentColor"
+                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                                </polygon>
+                            </svg></button></a>
+                    <a href="/page-ayh.html"><button>没梯子的点这里</button></a>
+                </section>
+                <div class="division">
+                    <div class="line"></div>
+                    <h1>没啥用的东西</h1>
+                    <div class="line"></div>
+                </div>
+                <section>
+                    <h1>黄</h1>
+                    <a target="_blank" href="/htm/yellow.html"><button>18+ ONLY<svg xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15"
+                                height="15" class="icon outbound">
+                                <path fill="currentColor"
+                                    d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+                                </path>
+                                <polygon fill="currentColor"
+                                    points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+                                </polygon>
+                            </svg></button></a>
+                </section>
+                <section>
+                    <h1>关于本页</h1>
+                    <div style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    align-content: center;
+                    flex-wrap: wrap;
+                ">
+                        <!--?xml version="1.0" encoding="UTF-8"?--><svg width="24" height="24" viewBox="0 0 48 48"
+                            fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 16px;">
+                            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+                            <path
+                                d="M24 44C29.5228 44 34.5228 41.7614 38.1421 38.1421C41.7614 34.5228 44 29.5228 44 24C44 18.4772 41.7614 13.4772 38.1421 9.85786C34.5228 6.23858 29.5228 4 24 4C18.4772 4 13.4772 6.23858 9.85786 9.85786C6.23858 13.4772 4 18.4772 4 24C4 29.5228 6.23858 34.5228 9.85786 38.1421C13.4772 41.7614 18.4772 44 24 44Z"
+                                fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24 37C25.3807 37 26.5 35.8807 26.5 34.5C26.5 33.1193 25.3807 32 24 32C22.6193 32 21.5 33.1193 21.5 34.5C21.5 35.8807 22.6193 37 24 37Z"
+                                fill="#333"></path>
+                            <path d="M24 12V28" stroke="#333" stroke-width="4" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>包含可能引人不适的内容
+                    </div><a href="/page-about.html"><button>点我</button></a>
+                </section>
             </div>
         </div>
-        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-        <script src="/js/main.js"></script>
-        <script src="/js/page.js"></script>
     </div>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/page.js"></script>
 </body>
 
 </html>
