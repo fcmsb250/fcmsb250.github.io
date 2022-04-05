@@ -7,7 +7,7 @@
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
         />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>flash 播放器</title>
+        <title>flash 播放器(Ruffle 引擎)</title>
         <script>
             window.play = function (url) {
                 var html =
@@ -19,10 +19,12 @@
                 document.body.innerHTML =html
             };
         </script>
+        <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     </head>
     <body style="height: 100%;margin: 0;padding: 0;">
         <a href="https://fcmsb250.github.io/no-anti.html">没防沉迷的游戏平台(作者没有收钱)</a>
-        <a href="https://fcmsb250.github.io/flash-2.html">如果播放出现问题, 试试这个</a>
+        <a href="https://fcmsb250.github.io/flash.html">如果播放出现问题, 试试这个</a>
+        <strong>这是使用 Ruffle 引擎的 flash 播放器, 可能存在问题</strong>
         <p>按下CTRL + S 可以将播放器保存到本地</p>
         <p>请选择一个.swf文件</p>
         <input type="file" accept=".swf" /><button>确定</button><p class="example">示例文件</p>
