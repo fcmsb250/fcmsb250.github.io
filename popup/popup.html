@@ -1,0 +1,374 @@
+<!--
+此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+此代码已被修改, 您可以在这里找到修改前的源码 <https://github.com/dsy4567/Anti-addiction-terminator>
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="防沉迷终结者的 popup 界面">
+    <title>防沉迷终结者</title>
+    <base href="/popup/">
+    <style>
+        /* global.css */
+        /*
+            此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+            Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+            此代码已被修改, 您可以在这里找到修改前的源码 <https://github.com/dsy4567/Anti-addiction-terminator>
+        */
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --theme-color1: white;
+                --theme-color2: rgb(36, 36, 36);
+                --theme-color3: rgba(200, 200, 200, 0.7);
+                --green: rgb(0, 200, 0);
+                --red: rgb(200, 0, 0);
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme-color1: rgb(36, 36, 36);
+                --theme-color2: white;
+                --theme-color3: rgba(128, 128, 128, 0.7);
+                --green: rgb(0, 128, 0);
+                --red: rgb(128, 0, 0);
+            }
+
+            .图标,
+            svg {
+                filter: invert(1);
+            }
+        }
+
+        ::selection {
+            background-color: var(--theme-color3);
+        }
+
+        * {
+            transition: all 0.2s;
+            -webkit-user-drag: none;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 200;
+            color: var(--theme-color2);
+        }
+
+        a:hover {
+            text-decoration: 1px underline var(--theme-color2);
+        }
+
+        button.大按钮 {
+            background-color: rgb(70, 200, 200);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 4px;
+            padding: 12px;
+        }
+
+        button.大按钮:active,
+        .选项:active {
+            filter: brightness(0.8) !important;
+        }
+
+        button.大按钮:hover,
+        .选项:hover {
+            filter: brightness(1.2);
+        }
+
+        button.大按钮 * {
+            text-decoration: none;
+            cursor: default;
+        }
+
+        .图标 {
+            cursor: pointer;
+        }
+
+        .图标.不点击 {
+            cursor: default;
+        }
+
+        .图标按钮 {
+            background-color: var(--theme-color-1);
+            border: none;
+            border-radius: 8px;
+            padding: 2px;
+            margin: 0;
+        }
+
+        .选项 {
+            border: none;
+            font-size: 16px;
+            height: 50px;
+            width: 95%;
+            background-color: var(--theme-color3);
+            color: var(--theme-color2);
+            border-radius: 8px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .选项 * {
+            cursor: default;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .选项 button {
+            background-color: var(--theme-color3);
+            border: none;
+            margin-top: 6px;
+        }
+    </style>
+    <style>
+        /* popup.css */
+        /*
+            此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+            Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+            此代码已被修改, 您可以在这里找到修改前的源码 <https://github.com/dsy4567/Anti-addiction-terminator>
+        */
+
+        @keyframes 齿轮 {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes 飞机 {
+            0% {
+                transform: translate(-1vw, 1vh);
+            }
+
+            50% {
+                transform: translate(1vw, -1vh);
+            }
+
+            100% {
+                transform: translate(-1vw, 1vh);
+            }
+        }
+
+        @keyframes 游戏手柄 {
+            0% {
+                transform: rotate(15deg);
+            }
+
+            50% {
+                transform: rotate(-15deg);
+            }
+
+            100% {
+                transform: rotate(15deg);
+            }
+        }
+
+        html {
+            /* display: none; */
+            background-color: var(--theme-color1);
+            color: var(--theme-color2);
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            /* max-width: 512px;
+    min-width: 512px; */
+            /* max-width: 512px; */
+        }
+
+        body {
+            margin: 0;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        #顶部 {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #顶部 .左,
+        #顶部 .右 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        #顶部 .左 *,
+        #顶部 .右 * {
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+
+        #logo {
+            border-radius: 50%;
+        }
+
+        #打开设置:active {
+            animation-name: 齿轮;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-delay: 1s;
+        }
+
+        .关于 * {
+            margin: 4px;
+        }
+
+        #关于,
+        .横幅 {
+            user-select: text;
+        }
+
+        #关于,
+        #设置,
+        #通知 {
+            display: none;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+
+        #工具 {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            align-content: center;
+        }
+
+        .横幅 {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            font-size: large;
+            width: 100%;
+            min-height: 50px;
+            margin-bottom: 4px;
+            text-align: center;
+            padding: 4px;
+            z-index: 99;
+            flex-direction: row;
+        }
+
+        .横幅 span {
+            max-width: calc(100% - 96px);
+            min-width: calc(100% - 96px);
+        }
+
+        .横幅图标,
+        .关闭横幅 {
+            width: 24px;
+            margin: 8px;
+        }
+
+        .关闭横幅 {
+            border: none;
+            border-radius: 8px;
+            width: 24px;
+            height: 24px;
+            background-color: rgba(0, 0, 0, 0);
+            background-image: url(/icon/close.svg);
+        }
+
+        #返回 {
+            display: none;
+        }
+
+        .装饰品 {
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            position: absolute;
+            width: 5vw;
+            height: auto;
+            z-index: -1;
+        }
+
+        .飞机 {
+            animation-name: 飞机;
+            right: 5vw;
+            bottom: 5vh;
+        }
+
+        .游戏手柄 {
+            animation-name: 游戏手柄;
+            left: 5vw;
+            bottom: 5vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="顶部">
+        <div class="左">
+            <img width="36" src="/img/logo.svg" alt="logo" id="logo" title="logo" />
+            <h1 id="名字">防沉迷终结者</h1>
+            <small id="版本"></small>
+        </div>
+        <div class="右">
+            <button class="图标按钮" id="打开设置">
+                <svg title="设置" width="24" height="24" viewBox="0 0 48 48" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect width="48" height="48" fill="white" fill-opacity="0.01" />
+                    <path
+                        d="M36.686 15.171C37.9364 16.9643 38.8163 19.0352 39.2147 21.2727H44V26.7273H39.2147C38.8163 28.9648 37.9364 31.0357 36.686 32.829L40.0706 36.2137L36.2137 40.0706L32.829 36.686C31.0357 37.9364 28.9648 38.8163 26.7273 39.2147V44H21.2727V39.2147C19.0352 38.8163 16.9643 37.9364 15.171 36.686L11.7863 40.0706L7.92939 36.2137L11.314 32.829C10.0636 31.0357 9.18372 28.9648 8.78533 26.7273H4V21.2727H8.78533C9.18372 19.0352 10.0636 16.9643 11.314 15.171L7.92939 11.7863L11.7863 7.92939L15.171 11.314C16.9643 10.0636 19.0352 9.18372 21.2727 8.78533V4H26.7273V8.78533C28.9648 9.18372 31.0357 10.0636 32.829 11.314L36.2137 7.92939L40.0706 11.7863L36.686 15.171Z"
+                        fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M24 29C26.7614 29 29 26.7614 29 24C29 21.2386 26.7614 19 24 19C21.2386 19 19 21.2386 19 24C19 26.7614 21.2386 29 24 29Z"
+                        fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round" />
+                </svg></button><button class="图标按钮" id="打开关于">
+                <svg title="关于" width="24" height="24" viewBox="0 0 48 48" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect width="48" height="48" fill="white" fill-opacity="0.01" />
+                    <path
+                        d="M24 44C29.5228 44 34.5228 41.7614 38.1421 38.1421C41.7614 34.5228 44 29.5228 44 24C44 18.4772 41.7614 13.4772 38.1421 9.85786C34.5228 6.23858 29.5228 4 24 4C18.4772 4 13.4772 6.23858 9.85786 9.85786C6.23858 13.4772 4 18.4772 4 24C4 29.5228 6.23858 34.5228 9.85786 38.1421C13.4772 41.7614 18.4772 44 24 44Z"
+                        fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M24 11C25.3807 11 26.5 12.1193 26.5 13.5C26.5 14.8807 25.3807 16 24 16C22.6193 16 21.5 14.8807 21.5 13.5C21.5 12.1193 22.6193 11 24 11Z"
+                        fill="#333" />
+                    <path d="M24.5 34V20H23.5H22.5" stroke="#333" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M21 34H28" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <hr />
+    <div id="工具">
+        <button class="大按钮" id="使用通用规则破解">
+            <span>使用 / 取消通用规则破解</span>
+        </button>
+        <button class="大按钮" id="大人来了按钮"><span>隐藏游戏</span></button>
+        <button class="大按钮" id="登录7k7k">
+            <span>强制登录7k7k账号</span>
+        </button>
+        <img title="飞机" class="飞机 装饰品 图标 不点击" src="/img/plane.svg" alt="飞机" />
+        <img title="游戏手柄" class="游戏手柄 装饰品 图标 不点击" src="/img/gamehandle.svg" alt="游戏手柄" />
+    </div>
+</body>
+
+</html>
