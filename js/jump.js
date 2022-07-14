@@ -4,11 +4,12 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 */
 
 const 网站被hx = 0;
+const ua = navigator.userAgent.toLowerCase();
 
 if (
     location.pathname != "/" &&
     location.pathname != "/index.html" &&
-    (网站被hx || location.href.includes("dnt=1")) &&
+    (网站被hx || location.href.includes("dnt=1")||ua.includes("qq")||ua.includes("wechat")||ua.includes("tencent")) &&
     !location.href.includes("jump=1")
 )
     location.href = "/?dnt=1";
