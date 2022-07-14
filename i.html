@@ -13,439 +13,17 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
     <meta name="description" content="防沉迷终结者 - 一个能 balala 的浏览器扩展">
     <title t="防沉迷终结者">...</title>
     <link rel="shortcut icon" href="/img/logo.svg" type="image/x-icon" />
-    <!-- <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/index.css" /> -->
-    <script src="/js/jump.js"></script>
-    <style>
-        /* global.css */
-        /*
-            Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-            此代码在 GPL-3.0 下获得许可
-        */
-
-        @media (prefers-color-scheme: light) {
-            :root {
-                --theme-color1: white;
-                --theme-color2: black;
-                --theme-color3: rgba(200, 200, 200, 0.7);
-                --theme-color4: rgb(200, 200, 200);
-                --green: rgb(0, 200, 0);
-                --red: rgb(200, 0, 0);
-            }
-
-            .图标 {
-                filter: invert(1);
-            }
-
-            ::-webkit-scrollbar {
-                width: 8px;
-                height: 8px;
-                background-color: white;
-            }
-
-            ::-webkit-scrollbar-thumb {
-                border-radius: 10px;
-                background-color: rgb(200, 200, 200);
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme-color1: rgb(36, 36, 36);
-                --theme-color2: white;
-                --theme-color3: rgba(64, 64, 64, 0.7);
-                --theme-color4: rgb(64, 64, 64);
-                --green: rgb(0, 128, 0);
-                --red: rgb(128, 0, 0);
-            }
-
-            ::-webkit-scrollbar {
-                width: 8px;
-                height: 8px;
-                background-color: rgb(36 36 36);
-            }
-
-            ::-webkit-scrollbar-thumb {
-                border-radius: 10px;
-                background-color: rgb(64, 64, 64);
-            }
-        }
-
-        html,
-        body {
-            background-color: var(--theme-color1) !important;
-            color: var(--theme-color2);
-            margin: 0;
-            padding: 0;
-        }
-
-        ::selection {
-            background-color: var(--theme-color4);
-        }
-
-        * {
-            transition: all 0.2s;
-        }
-
-        a {
-            text-decoration: none;
-            font-weight: 200;
-            color: var(--theme-color2);
-        }
-
-        a.外链::after {
-            content: "↗";
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        img {
-            width: 32px;
-            height: auto;
-        }
-
-        a {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        svg {
-            color: var(--theme-color2);
-        }
-    </style>
-    <style>
-        /* index.css */
-        /*
-            Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-            此代码在 GPL-3.0 下获得许可
-        */
-        @keyframes 加载界面 {
-            0% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @keyframes 加载圆圈 {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes 齿轮 {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes 飞机 {
-            0% {
-                transform: translate(-1vw, 1vh);
-            }
-
-            50% {
-                transform: translate(1vw, -1vh);
-            }
-
-            100% {
-                transform: translate(-1vw, 1vh);
-            }
-        }
-
-        @keyframes 游戏手柄 {
-            0% {
-                transform: rotate(15deg);
-            }
-
-            50% {
-                transform: rotate(-15deg);
-            }
-
-            100% {
-                transform: rotate(15deg);
-            }
-        }
-
-        @media only screen and (max-width: 660px) {
-            #导航栏 .左 h1 {
-                display: none;
-            }
-        }
-
-        .版块 {
-            margin-top: 8px;
-        }
-
-        .小版块 {
-            border: 1px solid;
-            border-radius: 8px;
-            padding: 8px;
-        }
-
-        .大标题 {
-            text-align: center;
-        }
-
-        .装饰品 {
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            position: absolute;
-            z-index: 0;
-            width: 48px;
-            margin: 8px;
-        }
-
-        .飞机 {
-            animation-name: 飞机;
-            left: 0;
-            top: 50vh;
-        }
-
-        .游戏手柄 {
-            animation-name: 游戏手柄;
-            top: 150vh;
-            right: 0;
-        }
-
-        .红绿灯 {
-            display: flex;
-            align-items: center;
-        }
-
-        .圆点 {
-            width: 8px;
-            height: 8px;
-            border-radius: 8px;
-        }
-
-        #加载界面 {
-            display: flex;
-            filter: opacity(1);
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            z-index: 999;
-            background-color: var(--theme-color1);
-            align-items: center;
-            justify-content: center;
-        }
-
-        #加载界面 {
-            animation-duration: 0.5s;
-            animation-iteration-count: 1;
-            animation-timing-function: linear;
-        }
-
-        #加载界面 .加载圆圈 {
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            animation-name: 加载圆圈;
-            width: 32px;
-            height: 32px;
-            border-top: 2px solid;
-            border-radius: 50%;
-        }
-
-        #导航栏 {
-            min-height: 86px;
-            background-color: var(--theme-color1);
-            backdrop-filter: blur(4px);
-            border-bottom: 0.1px solid;
-            position: sticky;
-            top: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            z-index: 99;
-        }
-
-        #导航栏 .左 {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-        #导航栏 .左,
-        #导航栏 .左 h1,
-        #导航栏 .左 img,
-        #导航栏 .右,
-        #导航栏 .右 a {
-            margin-left: 4px;
-            margin-right: 4px;
-        }
-
-        #演示,
-        #已支持的游戏平台,
-        #特色功能,
-        #下载 {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-content: center;
-            align-items: center;
-        }
-
-        #演示 .浏览器窗口 {
-            min-height: 480px;
-        }
-
-        .浏览器窗口 {
-            z-index: 7;
-            border: 1px solid;
-            border-radius: 8px;
-            width: 75vw;
-        }
-
-        .浏览器窗口:hover {
-            box-shadow: 0 12px 16px 0 black;
-        }
-
-        .浏览器窗口 .标题栏 {
-            width: 100%;
-            height: 32px;
-            border-bottom: 1px solid;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .浏览器窗口 .标题栏 span {
-            margin-left: 8px;
-        }
-
-        .浏览器窗口 .标题栏 .圆点 {
-            margin-right: 8px;
-        }
-
-        .浏览器窗口 .标题栏 .圆点:nth-child(1) {
-            background-color: green;
-        }
-
-        .浏览器窗口 .标题栏 .圆点:nth-child(2) {
-            background-color: yellow;
-        }
-
-        .浏览器窗口 .标题栏 .圆点:nth-child(3) {
-            background-color: red;
-        }
-
-        .浏览器窗口 .工具栏 {
-            border-bottom: 1px solid;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-
-        .浏览器窗口 .工具栏 * {
-            margin: 4px;
-        }
-
-        .浏览器窗口 .工具栏 img {
-            width: 16px;
-            height: auto;
-        }
-
-        .浏览器窗口 iframe {
-            border-radius: 8px;
-            box-shadow: 0 12px 16px 0 var(--theme-color3);
-            position: absolute;
-            right: calc(25vw / 2);
-            top: 260px;
-            width: 50vw;
-            max-width: 550px;
-            min-width: 348px;
-            height: 316px;
-            z-index: 8;
-        }
-
-        .浏览器窗口 .工具栏 .圆点 {
-            background-color: var(--theme-color2);
-        }
-
-        .横杠 {
-            width: calc(100% - 116px);
-            height: 8px;
-            border: var(--theme-color2) solid 1px;
-            border-radius: 8px;
-        }
-
-        #演示 .浏览器窗口 .网页 {
-            width: 100%;
-            height: calc(482px - 58px);
-            /* filter: blur(1px); */
-        }
-
-        .浏览器窗口 .网页 {
-            background-image: linear-gradient(45deg, var(--theme-color4), transparent);
-        }
-
-        .浏览器窗口:hover .网页 {
-            filter: brightness(1.2);
-        }
-
-        #下载 .浏览器窗口 .网页 {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: stretch;
-        }
-
-        #下载 .浏览器窗口 .网页 .小版块 {
-            min-width: 300px;
-            margin: 8px;
-            max-width: 450px;
-        }
-
-        #下载 .浏览器窗口 .网页 .小版块 svg {
-            width: 64px;
-            height: auto;
-        }
-
-        #页脚 {
-            display: flex;
-            background-color: rgb(36, 36, 36);
-            border-top: 1px solid;
-            align-items: center;
-            margin-top: 116px;
-            justify-content: center;
-            text-align: center;
-            padding: 16px;
-        }
-
-        #页脚,
-        #页脚 a {
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/index.css" />
 </head>
 
 <body>
-    <img title="飞机" class="装饰品 图标 飞机" src="/img/plane.svg" alt="飞机" />
-    <img title="游戏手柄" class="装饰品 图标 游戏手柄" src="/img/gamehandle.svg" alt="游戏手柄" />
     <div id="加载界面">
         <div class="加载圆圈"></div>
     </div>
+
+    <img title="飞机" class="装饰品 图标 飞机" src="/img/plane.svg" alt="飞机" />
+    <img title="游戏手柄" class="装饰品 图标 游戏手柄" src="/img/gamehandle.svg" alt="游戏手柄" />
 
     <div id="导航栏">
         <div class="左">
@@ -491,6 +69,10 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
             <div class="网页"></div>
             <iframe title="防沉迷终结者扩展的 popup 界面" src="/popup/popup.html" frameborder="0"></iframe>
         </div>
+    </div>
+
+    <div id="截图" class="版块">
+        <div title="防沉迷终结者的popup界面"></div>
     </div>
 
 
@@ -580,117 +162,56 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
                 </div>
             </div>
             <div class="网页">
-                <div class="小版块"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 256 256"
-                        width="150px" height="150px" class="a">
-                        <!-- including the "a" class here enables animation: it is applied by default -->
-                        <style type="text/css">
-                            .i,
-                            .iR,
-                            .iS {
-                                transform-origin: center center;
-                            }
-
-                            .i {
-                                transform: scale(.666, .666);
-                            }
-
-                            .a .iS {
-                                transform: scale(.5, .5);
-                                transform: scale(1, 1);
-                            }
-
-                            .a .m1 {
-                                opacity: 0;
-                                d: path("M231.05063,190.53383c-3.36511,1.7643-6.88057,3.34212-10.53322,4.71422c-10.9814,4.12509-23.10857,6.46361-35.89987,6.46361c-47.32103,0-88.54315-32.55214-88.54315-74.32233c0-11.74553,6.79524-21.9262,16.42522-27.28892c-42.79503,1.79418-53.79643,46.40015-53.79643,72.5307c0,73.87267,68.08929,81.36969,82.76053,81.36969c7.90663,0,19.84055-2.30283,27.03084-4.55843c0.43819-0.1458,0.8745-0.29285,1.31079-0.44318c27.75917-9.57338,51.18808-28.407,66.58849-52.81979C238.60222,192.67783,234.71828,188.61076,231.05063,190.53383z");
-                                opacity: 1;
-                            }
-
-                            .a .f2 {
-                                opacity: 1;
-                            }
-
-                            .a .f4 {
-                                opacity: 1;
-                            }
-
-                            .a .b {
-                                opacity: 1;
-                            }
-
-                            .a .f3,
-                            .a .s35,
-                            .a .s41 {
-                                opacity: 1;
-                            }
-
-                            .a .s35 {
-                                opacity: .35;
-                            }
-
-                            .a .s41 {
-                                opacity: .41;
-                            }
-                        </style>
-                        <defs>
-                            <linearGradient id="g1" gradientUnits="userSpaceOnUse" x1="58.70317" y1="177.0506"
-                                x2="237.03833" y2="177.0506">
-                                <stop offset="0" stop-color="#0C59A4" />
-                                <stop offset="1" stop-color="#114A8B" />
-                            </linearGradient>
-                            <radialGradient id="g2" gradientUnits="userSpaceOnUse" cx="157.20409" cy="178.38393"
-                                r="95.38397" gradientTransform="matrix(1 0 0 0.95107 0 8.72752)">
-                                <stop offset="0.71659" stop-color="#000000" stop-opacity="0" />
-                                <stop offset="0.9459" stop-color="#000000" stop-opacity="0.53" />
-                                <stop offset="1" stop-color="#000000" />
-                            </radialGradient>
-                            <linearGradient id="g3" gradientUnits="userSpaceOnUse" x1="152.72325" y1="99.68379"
-                                x2="41.32796" y2="221.01947">
-                                <stop offset="0" stop-color="#1B9DE2" />
-                                <stop offset="0.16164" stop-color="#1595DF" />
-                                <stop offset="0.66749" stop-color="#0680D7" />
-                                <stop offset="1" stop-color="#0078D4" />
-                            </linearGradient>
-                            <radialGradient id="g4" gradientUnits="userSpaceOnUse" cx="71.30408" cy="198.66367"
-                                r="143.23575"
-                                gradientTransform="matrix(0.14843 -0.98892 0.79688 0.1196 -97.5899 245.41753)">
-                                <stop offset="0.76293" stop-color="#000000" stop-opacity="0" />
-                                <stop offset="0.9459" stop-color="#000000" stop-opacity="0.5" />
-                                <stop offset="1" stop-color="#000000" />
-                            </radialGradient>
-                            <radialGradient id="g5" gradientUnits="userSpaceOnUse" cx="25.23376" cy="46.80529"
-                                r="202.43143"
-                                gradientTransform="matrix(-0.03715 0.99931 -2.12836 -0.07913 125.79001 25.29274)">
-                                <stop offset="0" stop-color="#35C1F1" />
-                                <stop offset="0.11079" stop-color="#34C1ED" />
-                                <stop offset="0.23164" stop-color="#2FC2DF" />
-                                <stop offset="0.31446" stop-color="#2BC3D2" />
-                                <stop offset="0.67338" stop-color="#36C752" />
-                            </radialGradient>
-                            <radialGradient id="g6" gradientUnits="userSpaceOnUse" cx="242.46877" cy="77.57553"
-                                r="97.33792"
-                                gradientTransform="matrix(0.28109 0.95968 -0.78353 0.22949 235.09682 -172.92052)">
-                                <stop offset="0" stop-color="#66EB6E" />
-                                <stop offset="1" stop-color="#66EB6E" stop-opacity="0" />
-                            </radialGradient>
-                        </defs>
-                        <g class="i">
-                            <g class="iR">
-                                <g class="iS">
-                                    <path class="m1" opacity="0" fill="url(#g1)"
-                                        d="M237.7152,148.3587c1.1691-0.7213,3.6613-1.8589,5.4377-2.4854c1.5491-0.5464,4.5361-1.8735,5.2791-2.3862c2.3848-1.5805,4.157-3.4437,5.5105-5.9441c1.309-2.4182,2.053-6.5432,2.053-10.123c0-70.4202-57.494-127.42-127.991-127.42c-70.753,0-128,57.284-128,128c0,70.715,57.247,128,128,128c52.9349,0,90.8621-31.303,108.393-59.821c2.1679-3.527,1.2216-6.6699-0.0929-9.02c-0.9281-1.6592-2.9148-2.9182-4.683-4.073c-2.6201-1.7112-4.9847-4.3521-6.9071-8.8919c-1.088-2.5693-1.0613-4.9861-0.2028-8.9508c0.8648-3.9935,2.3717-6.8179,5.2853-10.347C231.0015,153.4373,234.7515,150.1873,237.7152,148.3587z" />
-                                    <path class="s35" opacity="0" fill="url(#g2)"
-                                        d="M231.0507,190.5338c-3.3651,1.7643-6.8806,3.3421-10.5333,4.7142c-10.9814,4.1251-23.1085,6.4636-35.8998,6.4636c-47.321,0-88.5432-32.5522-88.5432-74.3223c0-11.7455,6.7952-21.9262,16.4252-27.2889l0,0c-4.0184,1.9023-9.4725,5.2613-13.7321,8.5916c-18.7556,14.6641-30.9232,37.8085-30.9232,63.9391c0,17.7566,5.6616,34.1115,15.1315,47.4073c6.1199,8.5919,13.841,15.8618,22.7354,21.3753c11.7183,7.2637,25.3926,11.5185,40.0637,11.5185c6.8009,0,13.3898-0.9183,19.6762-2.6092c0.2668-0.0718,0.5222-0.1441,0.7813-0.2164c0.7578-0.2125,1.5137-0.4294,2.2623-0.6642c-0.0007,0.0002-0.0013,0.0004-0.002,0.0006c0.0007-0.0002,0.0013-0.0004,0.002-0.0006c0.4382-0.1458,0.8745-0.2928,1.3108-0.4432c27.7592-9.5734,51.188-28.407,66.5885-52.8198C238.6022,192.6778,234.7183,188.6108,231.0507,190.5338z" />
-                                    <path class="f2" opacity="0" fill="url(#g3)"
-                                        d="M244.6575,65.254C223.4647,23.8359,177.718,0,127.9779,0C58.7776,0,2.4387,54.888,0.0768,123.4765C0.0297,124.4196,0,125.3608,0,126.2979c0,23.1819,5.3793,41.6899,12.1146,56.0331c15.0006,31.9492,42.8179,56.6777,76.8457,67.5727C101.2834,253.8495,114.4108,256,128.0453,256c14.1404,0,27.7307-2.3259,40.4492-6.5576c-7.1904,2.2556-14.8131,3.4898-22.7197,3.4898c-14.6711,0-28.3454-4.2548-40.0637-11.5185c-8.8943-5.5135-16.6154-12.7834-22.7354-21.3753c-9.4699-13.2958-15.1315-29.6507-15.1315-47.4073c0-26.1306,12.1676-49.275,30.9232-63.9391c4.2596-3.3304,9.7138-6.6895,13.7322-8.5917c3.1206-1.4772,8.4572-4.1373,15.5456-4.0367c11.7515,0.1666,20.6309,6.1577,25.6849,12.9623c3.8708,5.2111,6.2599,11.6281,6.3547,18.5939c0.0135,0.48,0.022,0.9327,0.022,1.3289c0,5.3729-2.7087,13.3281-7.7927,19.9088c-0.8106,1.0493-3.3038,2.4977-3.3038,5.6638c0,2.6043,1.7004,5.1172,4.7219,7.226c14.3804,10.0362,41.4858,8.6837,41.558,8.6833c11.1902-0.0387,21.2566-3.1159,30.2734-8.3873c4.1021-2.3988,7.8988-5.2476,11.3218-8.5002c11.7476-11.1629,18.9097-26.8941,19.1085-44.3727C256.2491,86.7548,248.0342,71.8527,244.6575,65.254z" />
-                                    <path class="s41" opacity="0" fill="url(#g4)"
-                                        d="M105.7111,241.4137c-8.8943-5.5135-16.6154-12.7834-22.7354-21.3753c-9.4699-13.2958-15.1315-29.6507-15.1315-47.4073c0-26.1306,12.1676-49.275,30.9232-63.9391c4.2596-3.3304,9.7138-6.6895,13.7322-8.5917c3.1206-1.4772,8.4572-4.1373,15.5456-4.0367c11.7515,0.1666,20.6309,6.1577,25.6849,12.9623c3.8708,5.2111,6.2599,11.6281,6.3547,18.5939c-0.1702-6.0287-1.5331-18.307-7.2575-28.19c-5.9521-10.2761-14.516-20.635-30.8503-29.2077C103.4337,60.49,83.4722,60.1486,79.9718,60.1486c-43.1722,0-79.4906,29.5088-79.9659,66.0515c0.0123-0.9107,0.0397-1.8176,0.0709-2.7236C0.0297,124.4196,0,125.3608,0,126.2979c0,23.1819,5.3793,41.6899,12.1146,56.0331c15.0006,31.9492,42.8179,56.6777,76.8457,67.5727C101.2834,253.8495,114.4108,256,128.0453,256c14.1404,0,27.7307-2.3259,40.4492-6.5576c-7.1904,2.2556-14.8131,3.4898-22.7197,3.4898C131.1037,252.9322,117.4294,248.6774,105.7111,241.4137z" />
-                                    <path class="f3" opacity="0" fill="url(#g5)"
-                                        d="M152.31433,148.8575c-0.81059,1.04924-3.3038,2.49771-3.3038,5.66376c0,2.60432,1.70044,5.11723,4.72195,7.22598c14.38045,10.03624,41.48578,8.68372,41.55806,8.6834c11.19022-0.03873,21.25658-3.11595,30.27335-8.3873c4.1021-2.39879,7.8988-5.24759,11.32176-8.5002c11.74759-11.16289,18.90974-26.89409,19.10855-44.37267c0.25494-22.4157-7.96001-37.31779-11.33673-43.91641C223.46466,23.83595,177.71796,0,127.97791,0C57.86351,0,0.94677,56.34609,0.00589,126.20016c0.47532-36.54277,36.79375-66.05154,79.9659-66.05154c3.50045,0,23.4619,0.34137,42.00535,10.07347c16.33434,8.5727,24.89824,18.93159,30.85034,29.20773c6.18011,10.66985,7.27951,24.14606,7.27951,29.51893S157.39832,142.27678,152.31433,148.8575z" />
-                                    <path class="f4" opacity="0" fill="url(#g6)"
-                                        d="M152.31433,148.8575c-0.81059,1.04924-3.3038,2.49771-3.3038,5.66376c0,2.60432,1.70044,5.11723,4.72195,7.22598c14.38045,10.03624,41.48578,8.68372,41.55806,8.6834c11.19022-0.03873,21.25658-3.11595,30.27335-8.3873c4.1021-2.39879,7.8988-5.24759,11.32176-8.5002c11.74759-11.16289,18.90974-26.89409,19.10855-44.37267c0.25494-22.4157-7.96001-37.31779-11.33673-43.91641C223.46466,23.83595,177.71796,0,127.97791,0C57.86351,0,0.94677,56.34609,0.00589,126.20016c0.47532-36.54277,36.79375-66.05154,79.9659-66.05154c3.50045,0,23.4619,0.34137,42.00535,10.07347c16.33434,8.5727,24.89824,18.93159,30.85034,29.20773c6.18011,10.66985,7.27951,24.14606,7.27951,29.51893S157.39832,142.27678,152.31433,148.8575z" />
-                                </g>
-                            </g>
-                        </g>
+                <div class="小版块">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 27600 27600">
+                        <linearGradient id="A" gradientUnits="userSpaceOnUse" />
+                        <linearGradient id="B" x1="6870" x2="24704" y1="18705" y2="18705" xlink:href="#A">
+                            <stop offset="0" stop-color="#0c59a4" />
+                            <stop offset="1" stop-color="#114a8b" />
+                        </linearGradient>
+                        <linearGradient id="C" x1="16272" x2="5133" y1="10968" y2="23102" xlink:href="#A">
+                            <stop offset="0" stop-color="#1b9de2" />
+                            <stop offset=".16" stop-color="#1595df" />
+                            <stop offset=".67" stop-color="#0680d7" />
+                            <stop offset="1" stop-color="#0078d4" />
+                        </linearGradient>
+                        <radialGradient id="D" cx="16720" cy="18747" r="9538" xlink:href="#A">
+                            <stop offset=".72" stop-opacity="0" />
+                            <stop offset=".95" stop-opacity=".53" />
+                            <stop offset="1" />
+                        </radialGradient>
+                        <radialGradient id="E" cx="7130" cy="19866" r="14324"
+                            gradientTransform="matrix(.14843 -.98892 .79688 .1196 -8759 25542)" xlink:href="#A">
+                            <stop offset=".76" stop-opacity="0" />
+                            <stop offset=".95" stop-opacity=".5" />
+                            <stop offset="1" />
+                        </radialGradient>
+                        <radialGradient id="F" cx="2523" cy="4680" r="20243"
+                            gradientTransform="matrix(-.03715 .99931 -2.12836 -.07913 13579 3530)" xlink:href="#A">
+                            <stop offset="0" stop-color="#35c1f1" />
+                            <stop offset=".11" stop-color="#34c1ed" />
+                            <stop offset=".23" stop-color="#2fc2df" />
+                            <stop offset=".31" stop-color="#2bc3d2" />
+                            <stop offset=".67" stop-color="#36c752" />
+                        </radialGradient>
+                        <radialGradient id="G" cx="24247" cy="7758" r="9734"
+                            gradientTransform="matrix(.28109 .95968 -.78353 .22949 24510 -16292)" xlink:href="#A">
+                            <stop offset="0" stop-color="#66eb6e" />
+                            <stop offset="1" stop-color="#66eb6e" stop-opacity="0" />
+                        </radialGradient>
+                        <path id="H"
+                            d="M24105 20053a9345 9345 0 01-1053 472 10202 10202 0 01-3590 646c-4732 0-8855-3255-8855-7432 0-1175 680-2193 1643-2729-4280 180-5380 4640-5380 7253 0 7387 6810 8137 8276 8137 791 0 1984-230 2704-456l130-44a12834 12834 0 006660-5282c220-350-168-757-535-565z" />
+                        <path id="I"
+                            d="M11571 25141a7913 7913 0 01-2273-2137 8145 8145 0 01-1514-4740 8093 8093 0 013093-6395 8082 8082 0 011373-859c312-148 846-414 1554-404a3236 3236 0 012569 1297 3184 3184 0 01636 1866c0-21 2446-7960-8005-7960-4390 0-8004 4166-8004 7820 0 2319 538 4170 1212 5604a12833 12833 0 007684 6757 12795 12795 0 003908 610c1414 0 2774-233 4045-656a7575 7575 0 01-6278-803z" />
+                        <path id="J"
+                            d="M16231 15886c-80 105-330 250-330 566 0 260 170 512 472 723 1438 1003 4149 868 4156 868a5954 5954 0 003027-839 6147 6147 0 001133-850 6180 6180 0 001910-4437c26-2242-796-3732-1133-4392-2120-4141-6694-6525-11668-6525-7011 0-12703 5635-12798 12620 47-3654 3679-6605 7996-6605 350 0 2346 34 4200 1007 1634 858 2490 1894 3086 2921 618 1067 728 2415 728 2952s-271 1333-780 1990z" />
+                        <use fill="url(#B)" xlink:href="#H" />
+                        <use fill="url(#D)" opacity=".35" xlink:href="#H" />
+                        <use fill="url(#C)" xlink:href="#I" />
+                        <use fill="url(#E)" opacity=".4" xlink:href="#I" />
+                        <use fill="url(#F)" xlink:href="#J" />
+                        <use fill="url(#G)" xlink:href="#J" />
                     </svg>
                     <h1>Edge 扩展商店版本</h1>
                     <p>在 Edge 扩展商店上下载适用于 Edge 浏览器或其它基于 Chromium 内核浏览器的防沉迷终结者</p>
@@ -701,7 +222,98 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 
                 </div>
                 <div class="小版块">
-                    <!-- <img src="/img/ff-logo.svg" alt="Firefox logo"> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 51500 51500">
+                        <radialGradient id="b" cx="87.4%" cy="-12.9%" r="128%"
+                            gradientTransform="matrix(.8 0 0 1 .18 .13)">
+                            <stop offset=".13" stop-color="#ffbd4f" />
+                            <stop offset=".28" stop-color="#ff980e" />
+                            <stop offset=".47" stop-color="#ff3750" />
+                            <stop offset=".78" stop-color="#eb0878" />
+                            <stop offset=".86" stop-color="#e50080" />
+                        </radialGradient>
+                        <radialGradient id="d" cx="49%" cy="40%" r="128%" gradientTransform="matrix(.82 0 0 1 .09 0)">
+                            <stop offset=".3" stop-color="#960e18" />
+                            <stop offset=".35" stop-color="#b11927" stop-opacity=".74" />
+                            <stop offset=".43" stop-color="#db293d" stop-opacity=".34" />
+                            <stop offset=".5" stop-color="#f5334b" stop-opacity=".1" />
+                            <stop offset=".53" stop-color="#ff3750" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="e" cx="48%" cy="-12%" r="140%">
+                            <stop offset=".13" stop-color="#fff44f" />
+                            <stop offset=".53" stop-color="#ff980e" />
+                        </radialGradient>
+                        <radialGradient id="f" cx="22.76%" cy="110.11%" r="100%">
+                            <stop offset=".35" stop-color="#3a8ee6" />
+                            <stop offset=".67" stop-color="#9059ff" />
+                            <stop offset="1" stop-color="#c139e6" />
+                        </radialGradient>
+                        <radialGradient id="h" cx="52%" cy="33%" r="59%" gradientTransform="scale(.9 1)">
+                            <stop offset=".21" stop-color="#9059ff" stop-opacity="0" />
+                            <stop offset=".97" stop-color="#6e008b" stop-opacity=".6" />
+                        </radialGradient>
+                        <radialGradient id="i" cx="210%" cy="-100%" r="290%">
+                            <stop offset=".1" stop-color="#ffe226" />
+                            <stop offset=".79" stop-color="#ff7139" />
+                        </radialGradient>
+                        <radialGradient id="j" cx="84%" cy="-41%" r="180%">
+                            <stop offset=".11" stop-color="#fff44f" />
+                            <stop offset=".46" stop-color="#ff980e" />
+                            <stop offset=".72" stop-color="#ff3647" />
+                            <stop offset=".9" stop-color="#e31587" />
+                        </radialGradient>
+                        <radialGradient id="k" cx="16.1%" cy="-18.6%" r="348.8%"
+                            gradientTransform="matrix(.10453 .46743 -.99452 .04913 -.05 -.26)">
+                            <stop offset="0" stop-color="#fff44f" />
+                            <stop offset=".3" stop-color="#ff980e" />
+                            <stop offset=".57" stop-color="#ff3647" />
+                            <stop offset=".74" stop-color="#e31587" />
+                        </radialGradient>
+                        <radialGradient id="l" cx="18.9%" cy="-42.5%" r="238.4%">
+                            <stop offset=".14" stop-color="#fff44f" />
+                            <stop offset=".48" stop-color="#ff980e" />
+                            <stop offset=".66" stop-color="#ff3647" />
+                            <stop offset=".9" stop-color="#e31587" />
+                        </radialGradient>
+                        <radialGradient id="m" cx="159.3%" cy="-44.72%" r="313.1%">
+                            <stop offset=".09" stop-color="#fff44f" />
+                            <stop offset=".63" stop-color="#ff980e" />
+                        </radialGradient>
+                        <linearGradient id="a" x1="87.25%" x2="9.4%" y1="15.5%" y2="93.1%">
+                            <stop offset=".05" stop-color="#fff44f" />
+                            <stop offset=".37" stop-color="#ff980e" />
+                            <stop offset=".53" stop-color="#ff3647" />
+                            <stop offset=".7" stop-color="#e31587" />
+                        </linearGradient>
+                        <linearGradient id="n" x1="80%" x2="18%" y1="14%" y2="84%">
+                            <stop offset=".17" stop-color="#fff44f" stop-opacity=".8" />
+                            <stop offset=".6" stop-color="#fff44f" stop-opacity="0" />
+                        </linearGradient>
+                        <path id="c"
+                            d="M47870 16735c-1044-2512-3160-5224-4820-6082 1352 2650 2134 5310 2433 7294 0-6 2 5 4 22l4 26c2268 6147 1032 12398-748 16218-2754 5910-9420 11967-19857 11670-11276-318-21210-8683-23064-19643-338-1728 0-2605 170-4008-207 1080-286 1394-390 3315l-2 123c0 13270 10760 24030 24032 24030 11887 0 21756-8630 23690-19963l110-927c477-4120-53-8453-1560-12075z" />
+                        <path id="g"
+                            d="M25677 21050c-40 598-2150 2660-2890 2660-6834 0-7943 4133-7943 4133 303 3480 2726 6348 5660 7865 134 70 270 130 405 193a13277 13277 0 00706 289 10674 10674 0 003127 603c11978 562 14300-14320 5655-18640 2213-385 4510 505 5794 1407-2100-3672-6025-6150-10530-6150-285 0-564 24-844 43a12025 12025 0 00-6614 2549c366 310 780 724 1650 1583 1630 1606 5813 3270 5822 3465z" />
+                        <path fill="url(#a)"
+                            d="M47870 16735c-1044-2512-3160-5224-4820-6082 1352 2650 2134 5310 2433 7294l5 40c-2718-6773-7325-9505-11088-15452l-566-920a7372 7372 0 01-265-497 4370 4370 0 01-359-950 63 63 0 00-55-65 82 82 0 00-45 0l-12 7-17 10 10-14c-6037 3536-8085 10076-8274 13350a12025 12025 0 00-6614 2548 7136 7136 0 00-622-470 11134 11134 0 01-68-5873c-2468 1124-4390 2900-5785 4470h-10c-953-1206-886-5187-832-6018-10-52-710 363-802 425a17507 17507 0 00-2349 2012 21048 21048 0 00-2244 2692l-1 3v-3a20284 20284 0 00-3225 7280l-32 160a39700 39700 0 00-237 1500l-5 52a22907 22907 0 00-390 3316l-1 120c0 13270 10760 24030 24032 24030 11887 0 21756-8630 23690-19963l110-927c477-4120-53-8453-1560-12075zM20170 35545c113 53 220 112 334 164l16 10a12620 12620 0 01-350-174zm5506-14493zm19813-3060l-3-23 4 26z" />
+                        <use fill="url(#b)" xlink:href="#c" />
+                        <use fill="url(#d)" xlink:href="#c" />
+                        <path fill="url(#e)"
+                            d="M36192 19560l150 110a13070 13070 0 00-2231-2911C26640 9290 32150 563 33080 120l10-13c-6037 3535-8085 10076-8273 13348 280-20 560-43 844-43 4505 0 8430 2477 10530 6150z" />
+                        <use fill="url(#f)" xlink:href="#g" />
+                        <use fill="url(#h)" xlink:href="#g" />
+                        <path fill="url(#i)"
+                            d="M17083 15204a24404 24404 0 01498 330 11134 11134 0 01-67-5874c-2470 1125-4390 2900-5785 4470 115-3 3600-66 5354 1074z" />
+                        <path fill="url(#j)"
+                            d="M1822 26240c1855 10960 11788 19325 23063 19644 10437 296 17104-5762 19858-11670 1780-3820 3016-10070 748-16218v-2l-4-24c-2-17-4-28-4-22l5 40c853 5566-1980 10958-6405 14604l-13 30c-8625 7023-16878 4237-18550 3097a14410 14410 0 01-350-174c-5028-2403-7105-6984-6660-10913-4245 0-5693-3580-5693-3580s3812-2718 8836-355c4653 2190 9023 355 9023 354-10-195-4192-1860-5822-3465-872-860-1285-1272-1652-1583a7136 7136 0 00-622-470 28293 28293 0 00-498-330c-1753-1140-5240-1076-5355-1073h-10c-953-1207-886-5188-832-6020-10-50-710 363-802 426a17507 17507 0 00-2349 2012 21048 21048 0 00-2244 2692l-1 3v-3a20284 20284 0 00-3225 7280c-10 52-865 3784-444 5720z" />
+                        <path fill="url(#k)"
+                            d="M34110 16760a13070 13070 0 012231 2910l360 296c5450 5020 2594 12120 2380 12626 4426-3646 7258-9038 6405-14604-2716-6774-7323-9506-11086-15453l-566-920a7372 7372 0 01-265-497 4370 4370 0 01-359-950 63 63 0 00-55-65 82 82 0 00-45 0l-12 7-17 10c-930 443-6440 9170 1030 16640z" />
+                        <path fill="url(#l)"
+                            d="M36702 19965a4743 4743 0 00-360-295l-150-110c-1283-900-3580-1792-5794-1407 8644 4322 6323 19203-5655 18640a10674 10674 0 01-3127-603 13451 13451 0 01-706-289 9064 9064 0 01-405-193l16 10c1670 1140 9924 3925 18550-3097l13-30c213-506 3068-7606-2380-12626z" />
+                        <path fill="url(#m)"
+                            d="M14844 27844s1110-4133 7943-4133c740 0 2850-2062 2890-2660s-4370 1836-9023-354c-5024-2363-8836 354-8836 354s1448 3580 5693 3580c-445 3930 1632 8510 6660 10913 113 53 218 112 334 164-2935-1517-5358-4384-5660-7865z" />
+                        <path fill="url(#n)"
+                            d="M47870 16735c-1044-2512-3160-5224-4820-6082 1352 2650 2134 5310 2433 7294l5 40c-2718-6773-7325-9505-11088-15452l-566-920a7372 7372 0 01-265-497 4370 4370 0 01-359-950 63 63 0 00-55-65 82 82 0 00-45 0l-12 7-17 10 10-14c-6037 3536-8085 10076-8274 13350 280-20 560-43 845-43 4505 0 8430 2477 10530 6148-1284-900-3580-1792-5795-1407 8644 4322 6323 19203-5655 18640a10674 10674 0 01-3127-603 13451 13451 0 01-706-289 9064 9064 0 01-405-193l17 10a14410 14410 0 01-350-174c112 53 218 112 333 164-2935-1517-5358-4384-5660-7865 0 0 1108-4133 7942-4133 740 0 2850-2062 2890-2660-10-195-4190-1860-5822-3465-870-860-1285-1272-1650-1583a7136 7136 0 00-623-470 11134 11134 0 01-67-5873c-2470 1124-4390 2900-5785 4470h-10c-953-1207-886-5187-832-6020-10-50-710 363-802 426a17507 17507 0 00-2349 2012 21048 21048 0 00-2243 2692l-1 3v-3a20284 20284 0 00-3225 7280l-32 160a39787 39787 0 00-277 1515c-2 18 2-17 0 0a27956 27956 0 00-355 3353l-3 122c0 13270 10760 24030 24032 24030 11887 0 21756-8630 23690-19963l110-927c477-4120-53-8453-1560-12075zm-2384 1234l4 26v-2l-4-24z" />
+                    </svg>
                     <h1>Firefox 扩展商店版本(更新慢)</h1>
                     <p>在 Firefox 扩展商店上下载适用于 Firefox 浏览器的防沉迷终结者</p>
                     <a href="https://addons.mozilla.org/zh-CN/firefox/addon/anti-addiction-terminator/"
@@ -724,22 +336,26 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
                 </div>
             </div>
         </div><br>
-        <em>防沉迷终结者可以在支持安装扩展的手机浏览器上运行, 如 kiwi 浏览器
+        <em>防沉迷终结者也可以在支持安装扩展且基于chromium内核的手机浏览器上运行, 如 kiwi 浏览器
             <br>
             作者不对从第三方镜像站下载的版本作任何担保, 请自行验证其安全性
         </em>
     </div>
 
-    <div id="页脚"><span>
+    <div id="页脚">
+        <div>
             Copyright (C) 2022 dsy4567 (
             <a target="_blank" href="https://github.com/dsy4567">GitHub</a>
             |
             <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> ) <br />
-            <a href="/">该网站</a> 和 <a href="https://github.com/dsy4567/Anti-addiction-terminator/">防沉迷终结者</a> 的源代码均在 <a
+            <a href="https://github.com/fcmsb250/fcmsb250.github.io">该网站</a> 和 <a
+                href="https://github.com/dsy4567/Anti-addiction-terminator/">防沉迷终结者</a> 的源代码均在 <a
                 href="https://www.gnu.org/licenses/gpl-3.0.html">GPL-3.0</a> 下获得许可<br>
-        </span></div>
+        </div>
+    </div>
     <!-- <div style="height: 200vh"></div> -->
 
+    <script src="/js/jump.js"></script>
     <script src="/js/index.js"></script>
     <noscript>
         <style>

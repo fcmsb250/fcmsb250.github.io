@@ -1,0 +1,193 @@
+/**
+此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+源代码位于 <https://github.com/fcmsb250/fcmsb250.github.io>
+此代码已被修改, 您可以在这里找到修改前的源码 <https://github.com/dsy4567/Anti-addiction-terminator>
+*/
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --theme-color1: white;
+        --theme-color2: rgb(36, 36, 36);
+        --theme-color3: rgba(150, 150, 150, 0.7);
+        --green: rgb(0, 200, 0);
+        --red: rgb(200, 0, 0);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-color1: rgb(36, 36, 36);
+        --theme-color2: white;
+        --theme-color3: rgba(128, 128, 128, 0.7);
+        --green: rgb(0, 128, 0);
+        --red: rgb(128, 0, 0);
+    }
+
+    .图标 {
+        filter: invert(1) !important;
+    }
+    .关闭横幅.图标.图标按钮:active {
+        filter: brightness(0.8) invert(1) !important;
+    }
+}
+@media (forced-colors: active) {
+    @media (prefers-color-scheme: light) {
+        .图标 {
+            filter: invert(1) !important;
+        }
+    }
+    :root {
+        --theme-color1: black;
+        --theme-color2: white;
+        --theme-color4: rgb(0, 255, 255);
+        --green: rgb(0, 255, 0);
+        --red: rgb(255, 0, 0);
+    }
+    ::selection {
+        background-color: white !important;
+        color: black;
+    }
+    body,
+    html {
+        background-color: black !important;
+        color: white !important;
+    }
+    a {
+        color: yellow !important;
+    }
+    a:hover {
+        text-decoration: 1px underline white !important;
+    }
+    .图标按钮 .图标,
+    button.图标,
+    button.大按钮,
+    .选项 {
+        border: 2px solid black !important;
+        color: white;
+    }
+    .图标按钮 .图标:hover,
+    .图标按钮 .图标:focus,
+    button.图标:hover,
+    button.图标:focus,
+    button.大按钮:hover,
+    button.大按钮:focus,
+    .选项:hover,
+    .选项:focus {
+        border: 2px dashed var(--theme-color4) !important;
+    }
+    button.大按钮,
+    .选项,
+    .图标按钮 {
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+    .横幅 {
+        border: 2px solid;
+        background-color: black !important;
+    }
+    .横幅:hover {
+        border-style: dashed;
+    }
+    .图标.不点击 {
+        border: 2px solid black;
+    }
+}
+
+:root {
+    --theme-color4: rgb(0, 200, 200);
+}
+::selection {
+    background-color: var(--theme-color3);
+}
+* {
+    transition: all 0.2s;
+    -webkit-user-drag: none;
+}
+
+input[type="checkbox"][checked] {
+    accent-color: beige;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 200;
+    color: var(--theme-color2);
+}
+a:hover {
+    text-decoration: 1px underline var(--theme-color2);
+}
+
+button.大按钮 {
+    background-color: var(--theme-color4);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 4px;
+    padding: 12px;
+}
+button.大按钮:active,
+.选项:active,
+.图标按钮:active {
+    filter: brightness(0.8) !important;
+}
+button.大按钮:hover,
+.选项:hover,
+.图标按钮:hover,
+button.大按钮:focus,
+.选项:focus,
+.图标按钮:focus {
+    filter: brightness(1.2);
+}
+
+.图标按钮 {
+    cursor: pointer;
+}
+
+.图标:hover {
+    /* background-color: var(--theme-color3); */
+}
+.图标.不点击 {
+    cursor: default;
+}
+
+.图标按钮 {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    padding: 8px;
+    /* padding-top: 8px; */
+    /* padding-bottom: 8px; */
+    padding-left: 9.5px;
+    padding-right: 9.5px;
+}
+.图标按钮:hover,
+.图标按钮:focus {
+    background-color: var(--theme-color3);
+}
+.选项 {
+    border: none;
+    font-size: 16px;
+    height: 50px;
+    width: 95%;
+    background-color: var(--theme-color3);
+    color: var(--theme-color2);
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+.选项 * {
+    cursor: default;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.选项 button {
+    background-color: var(--theme-color3);
+    border: none;
+    margin-top: 6px;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--theme-color4);
+}

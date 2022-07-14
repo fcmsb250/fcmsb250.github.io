@@ -2,6 +2,7 @@
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 此代码在 GPL-3.0 下获得许可
 */
+const 截图 = document.querySelector("#截图 div");
 window.onerror = async () => {
     try {
         加载界面.hide();
@@ -16,6 +17,10 @@ window.onload = async () => {
     setTimeout(() => {
         加载界面.remove();
     }, 500);
+    window.onresize();
+};
+window.onresize = async () => {
+    截图.style.height = (((document.body.offsetWidth / 4) * 3) / 512) * 300 + "px";
 };
 document.body.onscroll = async () => {
     if (document.documentElement.scrollTop == 0) {

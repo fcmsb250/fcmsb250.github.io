@@ -1,6 +1,6 @@
 /*
-Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-此代码在 GPL-3.0 下获得许可
+    Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+    此代码在 GPL-3.0 下获得许可
 */
 
 @media (prefers-color-scheme: light) {
@@ -12,19 +12,23 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
         --green: rgb(0, 200, 0);
         --red: rgb(200, 0, 0);
     }
+
     .图标 {
         filter: invert(1);
     }
+
     ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
         background-color: white;
     }
+
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: rgb(200, 200, 200);
     }
 }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --theme-color1: rgb(36, 36, 36);
@@ -34,15 +38,25 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
         --green: rgb(0, 128, 0);
         --red: rgb(128, 0, 0);
     }
+
     ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
         background-color: rgb(36 36 36);
     }
+
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: rgb(64, 64, 64);
     }
+}
+
+::selection {
+    background-color: var(--theme-color4);
+}
+
+* {
+    transition: all 0.2s;
 }
 
 html,
@@ -53,33 +67,31 @@ body {
     padding: 0;
 }
 
-::selection {
-    background-color: var(--theme-color4);
-}
-* {
-    transition: all 0.2s;
-}
-
 a {
     text-decoration: none;
     font-weight: 200;
     color: var(--theme-color2);
 }
+
 a.外链::after {
     content: "↗";
 }
+
 a:hover {
     text-decoration: underline;
 }
+
 img {
     width: 32px;
     height: auto;
 }
+
 a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 svg {
     color: var(--theme-color2);
 }
