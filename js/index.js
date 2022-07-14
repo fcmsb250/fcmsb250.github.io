@@ -32,8 +32,6 @@ document.body.onscroll = async () => {
     }
 };
 
-async () => {
-    document.querySelectorAll("a.外链").forEach((e) => {
-        e.setAttribute("target", "_blank");
-    });
-};
+document.querySelectorAll("a.外链").forEach((e) => {
+    e.setAttribute("target", "_blank");
+});
