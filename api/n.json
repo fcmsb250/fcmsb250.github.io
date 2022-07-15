@@ -1,0 +1,35 @@
+{
+    "v": "1.3",
+    "n": [
+        {
+            "id": "1",
+            "n": [
+                {
+                    "l": "en",
+                    "t": "Welcome to Anti-Addiction Terminator",
+                    "m": "The game is good, but you can't be greedy"
+                },
+                {
+                    "l": "zh-HK",
+                    "t": "歡迎使用防沉迷終結者",
+                    "m": "遊戲雖好， 但不能貪玩哦"
+                },
+                {
+                    "l": "zh-TW",
+                    "t": "歡迎使用防沉迷終結者",
+                    "m": "遊戲雖好， 但不能貪玩哦"
+                },
+                {
+                    "l": "zh",
+                    "t": "欢迎使用防沉迷终结者",
+                    "m": "游戏虽好, 但不能贪玩哦"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "u": "https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md",
+            "t": "privacy"
+        }
+    ]
+}
