@@ -9,7 +9,11 @@ const ua = navigator.userAgent.toLowerCase();
 if (
     location.pathname != "/" &&
     location.pathname != "/index.html" &&
-    (网站被hx || location.href.includes("dnt=1")||ua.includes("qq")||ua.includes("wechat")||ua.includes("tencent")) &&
+    (网站被hx ||
+        location.href.includes("dnt=1") ||
+        ua.includes("qq") ||
+        ua.includes("wechat") ||
+        ua.includes("tencent")) &&
     !location.href.includes("jump=1")
 )
     location.href = "/?dnt=1";
