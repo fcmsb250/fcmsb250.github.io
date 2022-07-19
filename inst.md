@@ -6,7 +6,7 @@ title: 在 360 浏览器里安装防沉迷终结者
 
 ## 第一步
 
-在任意位置新建文件夹, 然后点击 [此链接](https://fcmsb250.github.io/crx/extension_v1.3_mv2.crx) 下载压缩包, 再解压到刚才创建的文件夹
+在任意位置新建文件夹, 然后点击 [此链接](https://fcmsb250.github.io/crx/extension_v1.3_mv2.zip) 下载压缩包, 再解压到刚才创建的文件夹
 
 ## 第二步
 打开360浏览器, 在地址栏输入 `se://extensions/` 
