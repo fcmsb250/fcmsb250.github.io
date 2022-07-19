@@ -1,5 +1,5 @@
 ---
-lang: zh-CN
+language: zh-CN
 ---
 # 在 360 浏览器里安装防沉迷终结者
 
