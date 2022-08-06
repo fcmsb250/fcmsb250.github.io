@@ -102,7 +102,7 @@ function 动态加载(e) {
                         return e.click();
                     }
                     if (mt) {
-                        标题 = mt[0].replace(/<\/?title>/g);
+                        标题 = mt[0].replace(/<\/?title>/g,"");
                     }
                     临时主要部分.innerHTML = m[0];
                     临时主要部分.className = "主要部分";
@@ -110,9 +110,9 @@ function 动态加载(e) {
                     主要部分.innerHTML = "";
                     动态加载完毕 = true;
                     事件监听器 = [];
-                    document.title = 标题.replace("undefined", "");
                     完成加载();
                     history.replaceState(null, null, e.pathname);
+                    document.title = 标题;
                 } catch (err) {
                     e.click();
                 }
