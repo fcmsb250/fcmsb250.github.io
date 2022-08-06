@@ -341,3 +341,22 @@
 #页脚 a {
     color: white;
 }
+
+
+.正文 h1 {
+    text-align: center;
+}
+
+.正文 {
+    padding: 4%;
+    margin: 4%;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.主要部分{
+    display: block;
+}
+.临时主要部分{
+    display: none;
+}

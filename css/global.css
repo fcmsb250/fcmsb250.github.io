@@ -95,3 +95,10 @@ a {
 svg {
     color: var(--theme-color2);
 }
+
+td,
+th {
+    padding: 8px;
+    border: 1px solid;
+    border-radius: 2px;
+}
