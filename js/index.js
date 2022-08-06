@@ -5,6 +5,9 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 const 截图 = document.querySelector("#截图 div");
 var 动态加载完毕 = true;
 var 事件监听器 = [];
+var 进度条进度 = 0;
+var 进度条定时器 = null;
+var 进度条超时 = null;
 
 window.onerror = async () => {
     try {
@@ -86,6 +89,7 @@ async function 完成加载() {
 /** @param {HTMLAnchorElement} e  */
 function 动态加载(e) {
     try {
+        设置进度条进度(0);
         fetch(e.pathname)
             .then((res) => res.text())
             .then((html) => {
@@ -109,10 +113,11 @@ function 动态加载(e) {
                     主要部分.className = "临时主要部分";
                     主要部分.innerHTML = "";
                     动态加载完毕 = true;
+                    document.title = 标题;
                     事件监听器 = [];
                     完成加载();
                     history.replaceState(null, null, e.pathname);
-                    document.title = 标题;
+                    设置进度条进度(100);
                 } catch (err) {
                     e.click();
                 }
@@ -120,6 +125,28 @@ function 动态加载(e) {
     } catch (err) {
         e.click();
     }
+}
+
+function 设置进度条进度(进度) {
+    // if (进度条定时器) {
+    if (进度 === 100) {
+        进度条.style.width = "100%";
+        进度条超时 = setTimeout(() => {
+            进度条进度 = 0;
+            进度条.style.opacity = "0";
+            进度条.style.width = "0%";
+        }, 500);
+        clearInterval(进度条定时器);
+        return;
+    }
+    // }
+    clearTimeout(进度条超时);
+    进度条.style.opacity = "1";
+    进度条.style.width = 进度 + "%";
+    进度条定时器 = setInterval(() => {
+        进度条进度 += 1;
+        进度条.style.width = 进度条进度 + "%";
+    }, 100);
 }
 
 console.log(

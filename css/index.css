@@ -360,3 +360,14 @@
 .临时主要部分{
     display: none;
 }
+
+#进度条{
+    position: fixed;
+    width: 0%;
+    height: 1px;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    opacity: 1;
+    background-color: rgb(67, 255, 255);
+}
