@@ -2,7 +2,7 @@
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 此代码在 GPL-3.0 下获得许可
 */
-const 截图 = document.querySelector("#截图 div");
+
 var 动态加载完毕 = true;
 var 事件监听器 = [];
 var 进度条进度 = 0;
