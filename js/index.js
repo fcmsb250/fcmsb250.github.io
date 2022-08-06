@@ -102,7 +102,7 @@ function 动态加载(e) {
                         return e.click();
                     }
                     if (mt) {
-                        标题 = mt[0].replace(/<\/?title>/g,"");
+                        标题 = mt[0].replace(/<\/?title>/g, "");
                     }
                     临时主要部分.innerHTML = m[0];
                     临时主要部分.className = "主要部分";
