@@ -128,21 +128,21 @@ function 动态加载(e) {
 }
 
 function 设置进度条进度(进度) {
-    // if (进度条定时器) {
     if (进度 === 100) {
         进度条.style.width = "100%";
         进度条超时 = setTimeout(() => {
             进度条进度 = 0;
             进度条.style.opacity = "0";
-            进度条.style.width = "0%";
-        }, 500);
+            setTimeout(() => {
+                进度条.style.width = "0%";
+            }, 200);
+        }, 200);
         clearInterval(进度条定时器);
         return;
     }
-    // }
     clearTimeout(进度条超时);
-    进度条.style.opacity = "1";
     进度条.style.width = 进度 + "%";
+    进度条.style.opacity = "1";
     进度条定时器 = setInterval(() => {
         进度条进度 += 1;
         进度条.style.width = 进度条进度 + "%";
