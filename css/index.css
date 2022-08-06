@@ -220,7 +220,7 @@
 }
 
 .浏览器窗口:hover {
-    box-shadow: 0 12px 16px 0 black;
+    box-shadow: 0 12px 16px 0 var(--theme-color3);
 }
 
 .浏览器窗口 .标题栏 {
