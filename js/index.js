@@ -136,7 +136,7 @@ function 设置进度条进度(进度) {
             setTimeout(() => {
                 进度条.style.width = "0%";
             }, 200);
-        }, 200);
+        }, 500);
         clearInterval(进度条定时器);
         return;
     }
