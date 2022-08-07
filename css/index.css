@@ -332,7 +332,7 @@
     border-top: 1px solid;
     align-items: center;
     margin-top: 116px;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;
     padding: 16px;
 }
@@ -340,6 +340,11 @@
 #页脚,
 #页脚 a {
     color: white;
+}
+
+#页脚 img {
+    width: inherit;
+    height: auto;
 }
 
 
@@ -364,7 +369,7 @@
 #进度条{
     position: fixed;
     width: 0%;
-    height: 1px;
+    height: 2px;
     top: 0;
     left: 0;
     z-index: 998;
