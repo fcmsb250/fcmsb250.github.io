@@ -9,7 +9,7 @@ var 进度条进度 = 0;
 var 进度条定时器 = null;
 var 进度条超时 = null;
 
-window.onerror = async () => {
+window.onerror = () => {
     try {
         加载界面.hide();
     } catch (e) {
@@ -17,7 +17,7 @@ window.onerror = async () => {
     }
 };
 
-window.onload = async () => {
+window.onload = () => {
     导航栏.style.backgroundColor = "var(--theme-color1)";
     导航栏.style.boxShadow = "none";
     加载界面.style.animationName = "加载界面";
@@ -29,7 +29,7 @@ window.onload = async () => {
 
     完成加载();
 
-    document.body.onscroll = async () => {
+    document.body.onscroll = () => {
         if (document.documentElement.scrollTop === 0) {
             导航栏.style.backgroundColor = "var(--theme-color1)";
             导航栏.style.boxShadow = "none";
@@ -45,14 +45,14 @@ window.onload = async () => {
     }
 };
 
-window.onresize = async () => {
+window.onresize = () => {
     try {
         截图.style.height =
             (((document.body.offsetWidth / 4) * 3) / 512) * 300 + "px";
     } catch (e) {}
 };
 
-async function 完成加载() {
+function 完成加载() {
     document.querySelectorAll("a").forEach((e) => {
         if (e.host !== location.host) {
             e.className = "外链";
@@ -84,6 +84,8 @@ async function 完成加载() {
             e.outerHTML = `<a href="#${e.id}">${e.outerHTML}</a>`;
         }
     });
+
+    设置进度条进度(100);
 }
 
 /** @param {HTMLAnchorElement} e  */
@@ -117,13 +119,18 @@ function 动态加载(e) {
                     事件监听器 = [];
                     完成加载();
                     history.replaceState(null, null, e.pathname);
-                    设置进度条进度(100);
                 } catch (err) {
                     e.click();
+                    设置进度条进度(-1);
                 }
+            })
+            .catch(() => {
+                e.click();
+                设置进度条进度(-1);
             });
     } catch (err) {
         e.click();
+        设置进度条进度(-1);
     }
 }
 
@@ -134,6 +141,20 @@ function 设置进度条进度(进度) {
         进度条超时 = setTimeout(() => {
             进度条.style.opacity = "0";
             setTimeout(() => {
+                进度条.style.width = "0%";
+            }, 200);
+        }, 500);
+        clearInterval(进度条定时器);
+        return;
+    }
+    if (进度 === -1) {
+        进度条进度 = 100;
+        进度条.style.backgroundColor = "rgb(255, 0, 0)";
+        进度条.style.width = "100%";
+        进度条超时 = setTimeout(() => {
+            进度条.style.opacity = "0";
+            setTimeout(() => {
+                进度条.style.backgroundColor = "rgb(0, 255, 255)";
                 进度条.style.width = "0%";
             }, 200);
         }, 500);
@@ -155,3 +176,7 @@ console.log(
     "%c    ",
     "font-size:512px;background-size:100% 100%;background-repeat:no-repeat;background-image:url(https://fcmsb250.github.io/fuck-anti.webp);"
 );
+
+setTimeout(() => {
+    设置进度条进度(0);
+});
