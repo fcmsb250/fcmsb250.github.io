@@ -94,7 +94,8 @@ function 完成加载() {
 /** @param {HTMLAnchorElement} e  */
 function 动态加载(e) {
     try {
-        if (!e.href.endsWith(".html")) {
+        if (e.href.endsWith(".zip")) {
+            设置进度条进度(0);
             设置进度条进度(100);
             动态加载完毕 = true;
             return window.open(e.href, "_self");
