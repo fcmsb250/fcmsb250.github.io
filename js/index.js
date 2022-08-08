@@ -5,6 +5,7 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 
 var 动态加载完毕 = true;
 var 事件监听器 = [];
+// eslint-disable-next-line no-unused-vars
 var 进度条第一次动 = false;
 var 进度条进度 = 0;
 var 进度条定时器 = null;
@@ -93,6 +94,10 @@ function 完成加载() {
 /** @param {HTMLAnchorElement} e  */
 function 动态加载(e) {
     try {
+        if (!e.href.endsWith(".html")) {
+            设置进度条进度(100);
+            return window.open(e.href, "_self");
+        }
         设置进度条进度(0);
         fetch(e.pathname)
             .then((res) => res.text())
@@ -116,11 +121,11 @@ function 动态加载(e) {
                     临时主要部分.className = "主要部分";
                     主要部分.className = "临时主要部分";
                     主要部分.innerHTML = "";
-                    动态加载完毕 = true;
                     document.title = 标题;
                     事件监听器 = [];
                     完成加载();
                     history.replaceState(null, null, e.pathname);
+                    动态加载完毕 = true;
                 } catch (err) {
                     e.click();
                     设置进度条进度(-1);
