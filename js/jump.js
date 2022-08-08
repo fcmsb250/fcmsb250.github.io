@@ -35,7 +35,7 @@ if (
         ua.includes("qq") ||
         ua.includes("wechat") ||
         ua.includes("tencent")) &&
-        // 没让强制跳转
+    // 没让强制跳转
     !location.href.includes("jump=1")
 ) {
     location.href = "/?dnt=1";
@@ -46,7 +46,9 @@ if (
     // 强制跳转
     (location.href.includes("jump=1") || !网站被hx) &&
     // 没有强制屏蔽
-    !location.href.includes("dnt=1")
+    !location.href.includes("dnt=1") &&
+    // 屏蔽鹅厂家的东西
+    !(ua.includes("qq") || ua.includes("wechat") || ua.includes("tencent"))
 ) {
     if (location.href.includes("jump=1")) {
         window[atob("bG9jYXRpb24=")][atob("aHJlZg==")] =

@@ -5,6 +5,7 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 
 var 动态加载完毕 = true;
 var 事件监听器 = [];
+var 进度条第一次动 = false;
 var 进度条进度 = 0;
 var 进度条定时器 = null;
 var 进度条超时 = null;
@@ -84,6 +85,7 @@ function 完成加载() {
             e.outerHTML = `<a href="#${e.id}">${e.outerHTML}</a>`;
         }
     });
+    window.onresize();
 
     设置进度条进度(100);
 }
@@ -176,7 +178,3 @@ console.log(
     "%c    ",
     "font-size:512px;background-size:100% 100%;background-repeat:no-repeat;background-image:url(https://fcmsb250.github.io/fuck-anti.webp);"
 );
-
-setTimeout(() => {
-    设置进度条进度(0);
-});

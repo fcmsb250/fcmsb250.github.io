@@ -25,7 +25,10 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
     </head>
 
     <body>
-        <div id="进度条"></div>
+        <div
+            onload="if( !进度条第一次动 ) { 进度条第一次动=true;设置进度条进度(0); }"
+            id="进度条"
+        ></div>
         <div id="加载界面">
             <div class="加载圆圈"></div>
         </div>
