@@ -212,6 +212,10 @@
     border-radius: 8px;
 }
 
+.版块 > div {
+    z-index: 2;
+}
+
 .浏览器窗口 {
     z-index: 7;
     border: 1px solid;
