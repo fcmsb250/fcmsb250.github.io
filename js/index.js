@@ -162,14 +162,14 @@ function 设置进度条进度(进度) {
         return;
     }
     clearTimeout(进度条超时);
-    进度条.style.width = 进度 + "%";
+    进度条.style.width = "5%";
     进度条.style.opacity = "1";
     进度条定时器 = setInterval(() => {
         if (!(进度条进度 >= 100)) {
-            进度条进度 += 1;
+            进度条进度 += 5;
         }
         进度条.style.width = 进度条进度 + "%";
-    }, 100);
+    }, 500);
 }
 
 console.log(
