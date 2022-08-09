@@ -10,16 +10,20 @@ var 进度条第一次动 = false;
 var 进度条进度 = 0;
 var 进度条定时器 = null;
 var 进度条超时 = null;
+var 加载界面, 截图, 进度条;
 
 window.onerror = () => {
     try {
-        加载界面.hide();
+        document.getElementById("加载界面").remove();
     } catch (e) {
         window.onerror = null;
     }
 };
 
 window.onload = () => {
+    let 导航栏 = document.querySelector("#导航栏");
+    加载界面 = document.querySelector("#加载界面");
+
     导航栏.style.backgroundColor = "var(--theme-color1)";
     导航栏.style.boxShadow = "none";
     加载界面.style.animationName = "加载界面";
@@ -49,12 +53,20 @@ window.onload = () => {
 
 window.onresize = () => {
     try {
+        if (!截图) {
+            截图 = document.querySelector("#截图");
+        }
+
         截图.style.height =
             (((document.body.offsetWidth / 4) * 3) / 512) * 300 + "px";
     } catch (e) {}
 };
 
 function 完成加载() {
+    try {
+        加载界面.remove();
+    } catch (e) {}
+
     document.querySelectorAll("a").forEach((e) => {
         if (e.host !== location.host) {
             e.className = "外链";
@@ -108,16 +120,16 @@ function 动态加载(e) {
                     let m = html.match(
                         /<!-- START MAIN -->.+<!-- END MAIN -->/s
                     );
-                    let mt = html.match(/<title>.+<\/title>/s);
+                    let mt = html.match(/ t=".+"/s);
                     let 主要部分 = document.querySelector("div.主要部分");
                     let 临时主要部分 =
                         document.querySelector("div.临时主要部分");
                     let 标题 = "防沉迷终结者";
-                    if (!m || !e) {
+                    if (!m) {
                         return e.click();
                     }
                     if (mt) {
-                        标题 = mt[0].replace(/<\/?title>/g, "");
+                        标题 = mt[0].split('"')[1];
                     }
                     临时主要部分.innerHTML = m[0];
                     临时主要部分.className = "主要部分";
@@ -144,6 +156,10 @@ function 动态加载(e) {
 }
 
 function 设置进度条进度(进度) {
+    if (!进度条) {
+        进度条 = document.querySelector("#进度条");
+    }
+
     if (进度 === 100) {
         进度条进度 = 0;
         进度条.style.width = "100%";
