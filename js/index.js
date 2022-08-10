@@ -173,7 +173,7 @@ function 设置进度条进度(进度) {
         return;
     }
     if (进度 === -1) {
-        进度条进度 = 100;
+        进度条进度 = 0;
         进度条.style.backgroundColor = "rgb(255, 0, 0)";
         进度条.style.width = "100%";
         进度条超时 = setTimeout(() => {
