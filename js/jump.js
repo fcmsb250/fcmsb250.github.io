@@ -1,5 +1,5 @@
 /*
-这个文件决定了什么时候或哪些访客能不能访问网站, 以及帮助兼容 ie 浏览器
+这个文件决定了什么时候或哪些访客能不能访问网站, 并尽可能兼容 ie 浏览器
 
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 此代码在 GPL-3.0 下获得许可
@@ -66,7 +66,7 @@ if (位于根目录 && !正常显示网页) {
             // eslint-disable-next-line no-unused-vars
             .then(function (html) {
                 var m = html
-                    .replaceAll("\r\n", "")
+                    .replaceAll("\r", "")
                     .replaceAll("\n", "")
                     .match(/<body>.+<\/body>/);
                 if (!m) {
