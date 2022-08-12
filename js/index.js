@@ -3,6 +3,40 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 此代码在 GPL-3.0 下获得许可
 */
 
+/*
+        再傻逼的防沉迷也抵不住一个程序猿对快乐傻逼似的追求
+  ________ ___  ___  ________  ___  __            ___  _________
+ |\  _____\\  \|\  \|\   ____\|\  \|\  \         |\  \|\___   ___\     |
+ \ \  \__/\ \  \\\  \ \  \___|\ \  \/  /|_       \ \  \|___ \  \_|     |
+  \ \   __\\ \  \\\  \ \  \    \ \   ___  \       \ \  \   \ \  \      |
+   \ \  \_| \ \  \\\  \ \  \____\ \  \\ \  \       \ \  \   \ \  \     |
+    \ \__\   \ \_______\ \_______\ \__\\ \__\       \ \__\   \ \__\   \|/
+     \|__|    \|_______|\|_______|\|__| \|__|        \|__|    \|__|    v
+
+ ________________________________________________________________
+ |                                                              |
+ |                       未成年限制登录提醒                     |
+ |                                                              |
+ |您使用的是未成年账号，仅周五、周六、周日及法定节假日晚上8:00- |
+ |9:00可以游戏！当前已被限制！                                  |
+ |                                                              |
+ |            --------------------------------------            |
+ |            |           下次可玩游戏时段         |            |
+ |            |                                    |            |
+ |            |         本周五晚上8:00-9:00        |            |
+ |            |____________________________________|            |
+ |                                                              |
+ |温馨提示：                                                    |
+ |1.如果身份信息有误，请点击》》申请修改《《                    |
+ |2.如果您身份信息已经变动，可点击》》刷新身份《《              |
+ |                ____________    ____________                  |
+ |                |          |    |          |                  |
+ |                | 更换账号 |    |   确定   |                  |
+ |                |__________|    |__________|                  |
+ |______________________________________________________________|
+*/
+
+var 网页加载完毕 = false;
 var 动态加载完毕 = true;
 var 事件监听器 = [];
 // eslint-disable-next-line no-unused-vars
@@ -21,6 +55,9 @@ window.onerror = () => {
 };
 
 window.onload = () => {
+    网页加载完毕 = true;
+    document.querySelector("img#visitor-badge").src =
+        "https://visitor-badge.glitch.me/badge?page_id=ghp_fcmsb250_github_io&left_color=green&right_color=red";
     let 导航栏 = document.querySelector("#导航栏");
     加载界面 = document.querySelector("#加载界面");
 
@@ -104,16 +141,16 @@ function 完成加载() {
 }
 
 /** @param {HTMLAnchorElement} e  */
-function 动态加载(e) {
+function 动态加载(el) {
     try {
-        if (e.href.endsWith(".zip")) {
+        if (el.href.endsWith(".zip")) {
             设置进度条进度(0);
             设置进度条进度(100);
             动态加载完毕 = true;
-            return window.open(e.href, "_self");
+            return window.open(el.href, "_self");
         }
         设置进度条进度(0);
-        fetch(e.pathname)
+        fetch(el.pathname)
             .then((res) => res.text())
             .then((html) => {
                 try {
@@ -126,7 +163,7 @@ function 动态加载(e) {
                         document.querySelector("div.临时主要部分");
                     let 标题 = "防沉迷终结者";
                     if (!m) {
-                        return e.click();
+                        return el.click();
                     }
                     if (mt) {
                         标题 = mt[0].split('"')[1];
@@ -138,19 +175,19 @@ function 动态加载(e) {
                     document.title = 标题;
                     事件监听器 = [];
                     完成加载();
-                    history.replaceState(null, null, e.pathname);
+                    history.replaceState(null, null, el.pathname);
                     动态加载完毕 = true;
                 } catch (err) {
-                    e.click();
+                    el.click();
                     设置进度条进度(-1);
                 }
             })
             .catch(() => {
-                e.click();
+                el.click();
                 设置进度条进度(-1);
             });
     } catch (err) {
-        e.click();
+        el.click();
         设置进度条进度(-1);
     }
 }
