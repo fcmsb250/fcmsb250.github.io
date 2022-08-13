@@ -58,12 +58,20 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
         <div class="主要部分">
             <div class="大标题 版块">
                 <h1>404 - 未找到页面</h1>
-                <small>玩会小游戏放松一下吧</small><br />
+                <small
+                    >玩会小游戏放松一下吧
+                    <a
+                        href="#"
+                        onclick="document.querySelector('#game').src=document.querySelector('#game').src"
+                        >重玩</a
+                    ></small
+                ><br />
             </div>
         </div>
 
         <div class="版块">
             <iframe
+                id="game"
                 style="width: 100%; height: calc(100vh - 200px)"
                 src="//dsy4567.github.io/game.html"
                 frameborder="0"
