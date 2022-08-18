@@ -117,6 +117,12 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
             if (t) {
                 document.title = t;
             }
+
+            window.addEventListener("keypress", (e) => {
+                document.getElementById("game").focus();
+                e.preventDefault();
+                return false;
+            });
         </script>
     </body>
 </html>
