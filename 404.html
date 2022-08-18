@@ -14,19 +14,11 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
         <script src="/js/jump.js"></script>
         <link rel="stylesheet" href="/css/global.css" />
         <link rel="stylesheet" href="/css/index.css" />
-        <!-- Google tag (gtag.js) -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-9FFX6MHBWX"
-        ></script>
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-
-            gtag("config", "G-9FFX6MHBWX");
+            var p = location.pathname.replace(".html", "");
+            if (p === "/balala") location.href = "/";
+            else if (p === "/no-anti" || p === "/flash" || p === "/flash2")
+                location.host = "dsy4567.github.io";
         </script>
     </head>
     <body>
