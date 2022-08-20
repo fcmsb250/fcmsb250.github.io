@@ -105,7 +105,35 @@
     border-radius: 50%;
 }
 
-#logo{
+#回到顶部 {
+    transform: translateX(64px);
+    display: flex;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    position: fixed;
+    right: 16px;
+    bottom: 25vh;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 8px 12px 8px 0px var(--theme-color3);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#回到顶部:active {
+    filter: brightness(0.8);
+}
+
+#回到顶部:focus,
+#回到顶部:hover {
+    opacity: 1;
+}
+
+#logo {
     width: 32px;
     height: 32px;
 }

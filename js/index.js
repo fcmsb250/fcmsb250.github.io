@@ -56,9 +56,10 @@ window.onerror = () => {
 
 window.onload = () => {
     网页加载完毕 = true;
-    document.querySelector("img#visitor-badge").src =
-        "https://visitor-badge.glitch.me/badge?page_id=ghp_fcmsb250_github_io&left_color=green&right_color=red";
+    /** @type {HTMLDivElement} */
     let 导航栏 = document.querySelector("#导航栏");
+    /** @type {HTMLButtonElement} */
+    let 回到顶部 = document.querySelector("#回到顶部");
     加载界面 = document.querySelector("#加载界面");
 
     导航栏.style.backgroundColor = "var(--theme-color1)";
@@ -70,23 +71,42 @@ window.onload = () => {
 
     window.onresize();
 
-    完成加载();
-
     document.body.onscroll = () => {
         if (document.documentElement.scrollTop === 0) {
             导航栏.style.backgroundColor = "var(--theme-color1)";
             导航栏.style.boxShadow = "none";
+            回到顶部.style.cssText = "transform: translateX(64px);";
         } else {
             导航栏.style.backgroundColor = "var(--theme-color3)";
             导航栏.style.boxShadow = "0 12px 16px 0 var(--theme-color3)";
+            回到顶部.style.cssText = "transform: translateX(0px);";
         }
     };
+
+    完成加载();
 
     let t = document.getElementsByTagName("title")[0].getAttribute("t");
     if (t) {
         document.title = t;
     }
+    setTimeout(() => {
+        // 开发环境禁用统计
+        if (location.host !== "127.0.0.1") {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                // eslint-disable-next-line no-undef
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-9FFX6MHBWX");
+
+            document.querySelector("img#visitor-badge").src =
+                document.querySelector("img#visitor-badge").dataset.src;
+        }
+    }, 0);
 };
+
+window.onabort = window.onload;
 
 window.onresize = () => {
     try {
@@ -136,6 +156,7 @@ function 完成加载() {
         }
     });
     window.onresize();
+    document.body.onscroll();
 
     设置进度条进度(100);
 }
@@ -198,6 +219,7 @@ function 设置进度条进度(进度) {
     }
 
     if (进度 === 100) {
+        进度条.style.opacity = "1";
         进度条进度 = 0;
         进度条.style.width = "100%";
         进度条超时 = setTimeout(() => {
@@ -207,9 +229,11 @@ function 设置进度条进度(进度) {
             }, 200);
         }, 500);
         clearInterval(进度条定时器);
+        回到顶部();
         return;
     }
     if (进度 === -1) {
+        进度条.style.opacity = "1";
         进度条进度 = 0;
         进度条.style.backgroundColor = "rgb(255, 0, 0)";
         进度条.style.width = "100%";
@@ -232,6 +256,10 @@ function 设置进度条进度(进度) {
         }
         进度条.style.width = 进度条进度 + "%";
     }, 500);
+}
+
+function 回到顶部() {
+    document.body.scrollIntoView({ behavior: "smooth" });
 }
 
 console.log(
