@@ -9,6 +9,7 @@
         --theme-color2: black;
         --theme-color3: rgba(200, 200, 200, 0.7);
         --theme-color4: rgb(200, 200, 200);
+        --theme-color5: white;
         --green: rgb(0, 200, 0);
         --red: rgb(200, 0, 0);
     }
@@ -31,12 +32,19 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --theme-color1: rgb(36, 36, 36);
+        --theme-color1:
+        rgb(36, 36, 36);
         --theme-color2: white;
-        --theme-color3: rgba(64, 64, 64, 0.7);
-        --theme-color4: rgb(64, 64, 64);
-        --green: rgb(0, 128, 0);
-        --red: rgb(128, 0, 0);
+        --theme-color3:
+        rgba(64, 64, 64, 0.7);
+        --theme-color4:
+        rgb(64, 64, 64);
+        --theme-color5:
+        rgb(24, 24, 24);
+        --green:
+        rgb(0, 128, 0);
+        --red:
+        rgb(128, 0, 0);
     }
 
     ::-webkit-scrollbar {

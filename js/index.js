@@ -266,3 +266,10 @@ console.log(
     "%c    ",
     "font-size:512px;background-size:100% 100%;background-repeat:no-repeat;background-image:url(https://fcmsb250.github.io/fuck-anti.webp);"
 );
+
+setTimeout(() => {
+    try {
+        加载界面 = document.querySelector("#加载界面");
+        加载界面.remove();
+    } catch (e) {}
+}, 10000);
