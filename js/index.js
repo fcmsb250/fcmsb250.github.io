@@ -91,7 +91,7 @@ window.onload = () => {
     }
     setTimeout(() => {
         // 开发环境禁用统计
-        if (location.host !== "127.0.0.1") {
+        if (location.host === "fcmsb250.github.io") {
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 // eslint-disable-next-line no-undef
