@@ -50,9 +50,57 @@
     }
 }
 
+@keyframes rotateR {
+    from {
+        transform: translateY(0px) rotate(0);
+    }
+    to {
+        transform: translateY(15px) rotate(45deg);
+    }
+}
+
+@keyframes rotateL {
+    from {
+        transform: translateY(0px) rotate(0);
+    }
+    to {
+        transform: translateY(-15px) rotate(-45deg);
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 @media only screen and (max-width: 750px) {
     #导航栏 .左 h1 {
+        /* display: none; */
+    }
+    .菜单按钮 {
+        display: block !important;
+    }
+    .菜单按钮 + .右 {
         display: none;
+    }
+    .菜单按钮.已点击 + .右 {
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 12px 15px 0px,
+            rgba(0, 0, 0, 0.19) 0px 17px 50px 0px;
+        background-color: var(--theme-color5);
+        border-radius: 8px;
+        position: absolute;
+        right: 8px;
+        top: 100px;
+        flex-direction: column;
+        align-items: center;
+    }
+    #导航栏 .右 * {
+        margin: 6px;
     }
     #演示 {
         display: none !important;
@@ -205,7 +253,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 }
 
 #导航栏 .左,
@@ -215,6 +263,37 @@
 #导航栏 .右 a {
     margin-left: 4px;
     margin-right: 4px;
+}
+
+.菜单按钮 {
+    display: none;
+    background-color: transparent;
+    border: none;
+    width: 86px;
+    /* height: 56px; */
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.菜单按钮 .横杠 {
+    height: 2px;
+    width: 48px;
+    display: block;
+    margin: 11px 10px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+
+.菜单按钮.已点击 .横杠:nth-of-type(1) {
+    transform: translateY(15px) rotate(45deg);
+}
+.菜单按钮.已点击 .横杠:nth-of-type(2) {
+    opacity: 0;
+}
+.菜单按钮.已点击 .横杠:nth-of-type(3) {
+    transform: translateY(-15px) rotate(-45deg);
 }
 
 #演示,
@@ -311,7 +390,7 @@
     box-shadow: 0 12px 16px 0 var(--theme-color3);
     position: absolute;
     right: calc(25vw / 2);
-    top: 260px;
+    top: 286px;
     width: 50vw;
     max-width: 550px;
     min-width: 348px;

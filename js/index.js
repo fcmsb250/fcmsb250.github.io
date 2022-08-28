@@ -44,7 +44,7 @@ var 进度条第一次动 = false;
 var 进度条进度 = 0;
 var 进度条定时器 = null;
 var 进度条超时 = null;
-var 加载界面, 截图, 进度条;
+var 加载界面, 截图, 进度条, 回到顶部按钮;
 
 window.onerror = () => {
     try {
@@ -59,12 +59,18 @@ window.onload = () => {
     /** @type {HTMLDivElement} */
     let 导航栏 = document.querySelector("#导航栏");
     /** @type {HTMLButtonElement} */
-    let 回到顶部 = document.querySelector("#回到顶部");
+    let 菜单按钮 = document.querySelector(".菜单按钮");
+    回到顶部按钮 = document.querySelector("#回到顶部");
     加载界面 = document.querySelector("#加载界面");
 
     导航栏.style.backgroundColor = "var(--theme-color1)";
     导航栏.style.boxShadow = "none";
     加载界面.style.animationName = "加载界面";
+    菜单按钮.onclick = () => {
+        if (菜单按钮.className.includes("已点击"))
+            菜单按钮.className = 菜单按钮.className.replace(/[ 已点击]/g, "");
+        else 菜单按钮.className += " 已点击";
+    };
     setTimeout(() => {
         加载界面.remove();
     }, 500);
@@ -75,11 +81,11 @@ window.onload = () => {
         if (document.documentElement.scrollTop === 0) {
             导航栏.style.backgroundColor = "var(--theme-color1)";
             导航栏.style.boxShadow = "none";
-            回到顶部.style.cssText = "transform: translateX(64px);";
+            回到顶部按钮.style.cssText = "transform: translateX(64px);";
         } else {
             导航栏.style.backgroundColor = "var(--theme-color3)";
             导航栏.style.boxShadow = "0 12px 16px 0 var(--theme-color3)";
-            回到顶部.style.cssText = "transform: translateX(0px);";
+            回到顶部按钮.style.cssText = "transform: translateX(0px);";
         }
     };
 
@@ -110,10 +116,7 @@ window.onabort = window.onload;
 
 window.onresize = () => {
     try {
-        if (!截图) {
-            截图 = document.querySelector("#截图");
-        }
-
+        截图 = document.querySelector("#截图");
         截图.style.height =
             (((document.body.offsetWidth / 4) * 3) / 512) * 300 + "px";
     } catch (e) {}
