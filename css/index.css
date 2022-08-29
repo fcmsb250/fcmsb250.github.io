@@ -84,7 +84,7 @@
     .菜单按钮 + .右 {
         display: none;
     }
-    .菜单按钮.已点击 + .右 {
+    .菜单按钮.已点击 + .右{
         display: flex;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 12px 15px 0px,
             rgba(0, 0, 0, 0.19) 0px 17px 50px 0px;
@@ -267,7 +267,6 @@
     background-color: transparent;
     border: none;
     width: 86px;
-    /* height: 56px; */
     margin-right: 4px;
     cursor: pointer;
 }
@@ -281,6 +280,8 @@
     background-color: #fff;
     border-radius: 8px;
     transition: 0.4s;
+    border: 1px solid var(--theme-color2);
+    background-color: var(--theme-color2);
 }
 
 .菜单按钮.已点击 .横杠:nth-of-type(1) {

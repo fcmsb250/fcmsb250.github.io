@@ -44,7 +44,7 @@ var 进度条第一次动 = false;
 var 进度条进度 = 0;
 var 进度条定时器 = null;
 var 进度条超时 = null;
-var 加载界面, 截图, 进度条, 回到顶部按钮;
+var 加载界面, 截图, 进度条, 回到顶部按钮, 菜单按钮;
 
 window.onerror = () => {
     try {
@@ -59,17 +59,21 @@ window.onload = () => {
     /** @type {HTMLDivElement} */
     let 导航栏 = document.querySelector("#导航栏");
     /** @type {HTMLButtonElement} */
-    let 菜单按钮 = document.querySelector(".菜单按钮");
+    菜单按钮 = document.querySelector(".菜单按钮");
     回到顶部按钮 = document.querySelector("#回到顶部");
     加载界面 = document.querySelector("#加载界面");
 
     导航栏.style.backgroundColor = "var(--theme-color1)";
     导航栏.style.boxShadow = "none";
     加载界面.style.animationName = "加载界面";
-    菜单按钮.onclick = () => {
-        if (菜单按钮.className.includes("已点击"))
+    菜单按钮.onclick = (n) => {
+        if (菜单按钮.className.includes("已点击")) {
             菜单按钮.className = 菜单按钮.className.replace(/[ 已点击]/g, "");
-        else 菜单按钮.className += " 已点击";
+            菜单按钮.title="显示更多"
+        } else if (n !== 0) {
+            菜单按钮.className += " 已点击";
+            菜单按钮.title="关闭"
+        }
     };
     setTimeout(() => {
         加载界面.remove();
@@ -201,6 +205,7 @@ function 动态加载(el) {
                     完成加载();
                     history.replaceState(null, null, el.pathname);
                     动态加载完毕 = true;
+                    菜单按钮.onclick(0);
                 } catch (err) {
                     el.click();
                     设置进度条进度(-1);

@@ -35,6 +35,11 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
                 </a>
                 <a href="/i.html"><h1>防沉迷终结者</h1></a>
             </div>
+            <button title="显示更多" class="菜单按钮">
+                <div class="横杠"></div>
+                <div class="横杠"></div>
+                <div class="横杠"></div>
+            </button>
             <div class="右">
                 <a href="/privacy">隐私策略</a>
                 <a href="/inst">安装教程(360浏览器)</a>
@@ -124,6 +129,21 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
                 return false;
             });
         </script>
+        <style>
+            .菜单按钮:focus + .右,
+            .菜单按钮 + .右:hover {
+                display: flex;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 12px 15px 0px,
+                    rgba(0, 0, 0, 0.19) 0px 17px 50px 0px;
+                background-color: var(--theme-color5);
+                border-radius: 8px;
+                position: absolute;
+                right: 8px;
+                top: 100px;
+                flex-direction: column;
+                align-items: center;
+            }
+        </style>
     </body>
 </html>
 
