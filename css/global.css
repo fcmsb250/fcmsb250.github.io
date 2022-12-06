@@ -67,7 +67,6 @@ body {
     color: var(--theme-color2);
     margin: 0;
     padding: 0;
-    filter: grayscale(1);
 }
 
 a {
