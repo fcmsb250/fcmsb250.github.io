@@ -104,7 +104,7 @@ window.onload = () => {
         let u = navigator.userAgent.toLowerCase();
         if (
             location.host === "fcmsb250.github.io" &&
-            !(u.includes("bot") || !u.includes("spider"))
+            !(u.includes("bot") || u.includes("spider"))
         ) {
             window.dataLayer = window.dataLayer || [];
             function gtag() {
