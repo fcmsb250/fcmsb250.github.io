@@ -66,13 +66,13 @@ window.onload = () => {
     导航栏.style.backgroundColor = "var(--theme-color1)";
     导航栏.style.boxShadow = "none";
     加载界面.style.animationName = "加载界面";
-    菜单按钮.onclick = (n) => {
+    菜单按钮.onclick = n => {
         if (菜单按钮.className.includes("已点击")) {
             菜单按钮.className = 菜单按钮.className.replace(/[ 已点击]/g, "");
-            菜单按钮.title="显示更多"
+            菜单按钮.title = "显示更多";
         } else if (n !== 0) {
             菜单按钮.className += " 已点击";
-            菜单按钮.title="关闭"
+            菜单按钮.title = "关闭";
         }
     };
     setTimeout(() => {
@@ -100,8 +100,12 @@ window.onload = () => {
         document.title = t;
     }
     setTimeout(() => {
-        // 开发环境禁用统计
-        if (location.host === "fcmsb250.github.io") {
+        // 开发环境/爬虫禁用统计
+        let u = navigator.userAgent.toLowerCase();
+        if (
+            location.host === "fcmsb250.github.io" &&
+            !(u.includes("bot") || !u.includes("spider"))
+        ) {
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 // eslint-disable-next-line no-undef
@@ -131,7 +135,7 @@ function 完成加载() {
         加载界面.remove();
     } catch (e) {}
 
-    document.querySelectorAll("a").forEach((e) => {
+    document.querySelectorAll("a").forEach(e => {
         if (e.host !== location.host) {
             e.className = "外链";
             e.setAttribute("target", "_blank");
@@ -139,13 +143,13 @@ function 完成加载() {
             if (e.href.includes("#")) {
                 return;
             }
-            事件监听器.forEach((fn) => {
+            事件监听器.forEach(fn => {
                 try {
                     e.removeEventListener("click", fn);
                 } catch (e) {}
             });
             /** @param {MouseEvent} ev */
-            let fn = (ev) => {
+            let fn = ev => {
                 if (动态加载完毕) {
                     动态加载完毕 = false;
                     动态加载(e);
@@ -157,7 +161,7 @@ function 完成加载() {
             e.addEventListener("click", fn);
         }
     });
-    document.querySelectorAll("h1,h2").forEach((e) => {
+    document.querySelectorAll("h1,h2").forEach(e => {
         if (e.id) {
             e.outerHTML = `<a href="#${e.id}">${e.outerHTML}</a>`;
         }
@@ -179,8 +183,8 @@ function 动态加载(el) {
         }
         设置进度条进度(0);
         fetch(el.pathname)
-            .then((res) => res.text())
-            .then((html) => {
+            .then(res => res.text())
+            .then(html => {
                 try {
                     let m = html.match(
                         /<!-- START MAIN -->.+<!-- END MAIN -->/s
