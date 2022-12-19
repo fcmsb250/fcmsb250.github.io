@@ -253,7 +253,7 @@ function 设置进度条进度(进度) {
         进度条超时 = setTimeout(() => {
             进度条.style.opacity = "0";
             setTimeout(() => {
-                进度条.style.backgroundColor = "rgb(0, 255, 255)";
+                进度条.style.backgroundColor = "#66ccff";
                 进度条.style.width = "0%";
             }, 200);
         }, 500);

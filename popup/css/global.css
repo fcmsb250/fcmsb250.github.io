@@ -39,7 +39,7 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
     :root {
         --theme-color1: black;
         --theme-color2: white;
-        --theme-color4: rgb(0, 255, 255);
+        --theme-color4: #66ccff;
         --green: rgb(0, 255, 0);
         --red: rgb(255, 0, 0);
     }
