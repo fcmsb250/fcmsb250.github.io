@@ -103,8 +103,8 @@ if (位于根目录 && !正常显示网页) {
                     .replaceAll("\n", "")
                     .match(/<body>.+<\/body>/);
                 if (!m) {
-                    document.body.innerHTML = "你好, 世界!";
-                    document.title = "我的第一个网页";
+                    document.body.innerHTML = "加载失败";
+                    document.title = "啊哦";
                     return;
                 }
                 // eslint-disable-next-line no-undef
@@ -120,8 +120,8 @@ if (位于根目录 && !正常显示网页) {
                 document.title = "防沉迷终结者";
             })
             .catch(function () {
-                document.writeln("你好, 世界!");
-                document.title = "我的第一个网页";
+                document.writeln("加载失败");
+                document.title = "啊哦";
             });
     });
 }
