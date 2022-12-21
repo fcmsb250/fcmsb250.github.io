@@ -45,6 +45,13 @@ var 进度条进度 = 0;
 var 进度条定时器 = null;
 var 进度条超时 = null;
 var 加载界面, 截图, 进度条, 回到顶部按钮, 菜单按钮;
+var 主站和镜像站域名 = [
+        "fcmsb250.github.io",
+        "fcm.mirrors.dsy4567.cf",
+        "fcm.dsy4567.cf",
+        "fcm-vercel.mirrors.dsy4567.cf",
+        "fcm-netlify.mirrors.dsy4567.cf"
+]
 
 window.onerror = () => {
     try {
@@ -103,8 +110,7 @@ window.onload = () => {
         // 开发环境/爬虫禁用统计
         let u = navigator.userAgent.toLowerCase();
         if (
-            (location.host === "fcmsb250.github.io" ||
-                location.host === "fcm.mirrors.dsy4567.cf") &&
+            主站和镜像站域名.includes(location.host) &&
             !(u.includes("bot") || u.includes("spider"))
         ) {
             window.dataLayer = window.dataLayer || [];
