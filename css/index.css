@@ -93,7 +93,7 @@
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     position: fixed;
-    top: 0;
+    top: -10vh;
     z-index: 999;
 }
 
