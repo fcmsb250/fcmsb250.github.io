@@ -116,7 +116,7 @@ window.onload = () => {
             document.body.append(s);
             setTimeout(() => {
                 s.remove();
-            }, 100000);
+            }, 10000);
         }, 500);
         // 开发环境/爬虫禁用统计
         let u = navigator.userAgent.toLowerCase();
