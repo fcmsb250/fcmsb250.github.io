@@ -77,6 +77,26 @@
     }
 }
 
+@keyframes 雪花 {
+    from {
+        transform: translate(0, 0) rotate(0);
+    }
+    to {
+        transform: translate(0, 110vh) rotate(365deg);
+    }
+}
+
+.雪花 {
+    animation: 雪花;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
 @media only screen and (max-width: 750px) {
     .菜单按钮 {
         display: block !important;

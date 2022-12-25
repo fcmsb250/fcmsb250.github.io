@@ -46,12 +46,12 @@ var 进度条定时器 = null;
 var 进度条超时 = null;
 var 加载界面, 截图, 进度条, 回到顶部按钮, 菜单按钮;
 var 主站和镜像站域名 = [
-        "fcmsb250.github.io",
-        "fcm.mirrors.dsy4567.cf",
-        "fcm.dsy4567.cf",
-        "fcm-vercel.mirrors.dsy4567.cf",
-        "fcm-netlify.mirrors.dsy4567.cf"
-]
+    "fcmsb250.github.io",
+    "fcm.mirrors.dsy4567.cf",
+    "fcm.dsy4567.cf",
+    "fcm-vercel.mirrors.dsy4567.cf",
+    "fcm-netlify.mirrors.dsy4567.cf",
+];
 
 window.onerror = () => {
     try {
@@ -107,6 +107,17 @@ window.onload = () => {
         document.title = t;
     }
     setTimeout(() => {
+        // 雪花特效
+        setInterval(() => {
+            let s = document.createElement("div");
+            s.innerText = "❄️";
+            s.className = "雪花";
+            s.style.left = Math.ceil(Math.random() * 100) + "%";
+            document.body.append(s);
+            setTimeout(() => {
+                s.remove();
+            }, 100000);
+        }, 500);
         // 开发环境/爬虫禁用统计
         let u = navigator.userAgent.toLowerCase();
         if (
