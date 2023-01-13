@@ -1,6 +1,6 @@
 /*
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-此代码在 GPL-3.0 下获得许可
+View license at <https://github.com/fcmsb250/fcmsb250.github.io/blob/main/LICENSE.md>
 */
 
 /*

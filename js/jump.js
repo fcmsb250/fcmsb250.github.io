@@ -1,8 +1,6 @@
 /*
-这个文件决定了什么时候或哪些访客能不能访问网站, 并尽可能兼容 ie11 浏览器
-
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-此代码在 GPL-3.0 下获得许可
+View license at <https://github.com/fcmsb250/fcmsb250.github.io/blob/main/LICENSE.md>
 */
 
 /*
