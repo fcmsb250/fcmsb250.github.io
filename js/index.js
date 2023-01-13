@@ -45,6 +45,13 @@ var 进度条进度 = 0;
 var 进度条定时器 = null;
 var 进度条超时 = null;
 var 加载界面, 截图, 进度条, 回到顶部按钮, 菜单按钮;
+var 主站和镜像站域名 = [
+    "fcmsb250.github.io",
+    "fcm.mirrors.dsy4567.cf",
+    "fcm.dsy4567.cf",
+    "fcm-vercel.mirrors.dsy4567.cf",
+    "fcm-netlify.mirrors.dsy4567.cf",
+];
 
 window.onerror = () => {
     try {
@@ -100,11 +107,21 @@ window.onload = () => {
         document.title = t;
     }
     setTimeout(() => {
+        // 雪花特效
+        setInterval(() => {
+            let s = document.createElement("div");
+            s.innerText = "❄️";
+            s.className = "雪花";
+            s.style.left = Math.ceil(Math.random() * 100) + "%";
+            document.body.append(s);
+            setTimeout(() => {
+                s.remove();
+            }, 10000);
+        }, 500);
         // 开发环境/爬虫禁用统计
         let u = navigator.userAgent.toLowerCase();
         if (
-            (location.host === "fcmsb250.github.io" ||
-                location.host === "fcm.mirrors.dsy4567.cf") &&
+            主站和镜像站域名.includes(location.host) &&
             !(u.includes("bot") || u.includes("spider"))
         ) {
             window.dataLayer = window.dataLayer || [];
@@ -253,7 +270,7 @@ function 设置进度条进度(进度) {
         进度条超时 = setTimeout(() => {
             进度条.style.opacity = "0";
             setTimeout(() => {
-                进度条.style.backgroundColor = "rgb(0, 255, 255)";
+                进度条.style.backgroundColor = "#66ccff";
                 进度条.style.width = "0%";
             }, 200);
         }, 500);

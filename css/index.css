@@ -73,6 +73,27 @@
     }
 }
 
+@keyframes 雪花 {
+    from {
+        transform: translate(0, 0) rotate(0);
+    }
+    to {
+        transform: translate(0, 110vh) rotate(365deg);
+    }
+}
+
+.雪花 {
+    animation: 雪花;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    position: fixed;
+    pointer-events: none;
+    top: -10vh;
+    z-index: 999;
+}
+
 @media only screen and (max-width: 750px) {
     .菜单按钮 {
         display: block !important;
@@ -80,7 +101,7 @@
     .菜单按钮 + .右 {
         display: none;
     }
-    .菜单按钮.已点击 + .右{
+    .菜单按钮.已点击 + .右 {
         display: flex;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 12px 15px 0px,
             rgba(0, 0, 0, 0.19) 0px 17px 50px 0px;
@@ -486,7 +507,7 @@
     left: 0;
     z-index: 999;
     opacity: 1;
-    background-color: rgb(0, 255, 255);
+    background-color: #66ccff;
 }
 
 #visitor-badge {
