@@ -353,6 +353,7 @@
 
 .浏览器窗口:hover {
     box-shadow: 0 12px 16px 0 var(--theme-color3);
+    border: 1px solid var(--theme-color2);
 }
 
 .浏览器窗口 .标题栏 {
@@ -362,6 +363,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.浏览器窗口:hover .标题栏 {
+    border-bottom: 1px solid var(--theme-color2);
 }
 
 .浏览器窗口 .标题栏 span {
@@ -391,6 +396,10 @@
     align-items: center;
 }
 
+.浏览器窗口:hover .工具栏 {
+    border-bottom: 1px solid var(--theme-color2);
+}
+
 .浏览器窗口 .工具栏 * {
     margin: 4px;
 }
@@ -418,11 +427,19 @@
     background-color: var(--theme-color3);
 }
 
+.浏览器窗口:hover .工具栏 .圆点 {
+    background-color: var(--theme-color2);
+}
+
 .横杠 {
     width: calc(100% - 116px);
     height: 8px;
     border: var(--theme-color3) solid 1px;
     border-radius: 8px;
+}
+
+.浏览器窗口:hover .横杠 {
+    border: var(--theme-color2) solid 1px;
 }
 
 #演示 .浏览器窗口 .网页 {
